@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export const Dropdown = ({
   title,
@@ -15,7 +16,6 @@ export const Dropdown = ({
   const dropdownRef = useRef(null);
   const itemsRef = useRef([]);
 
-  // Detect mobile device by window width
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
@@ -23,7 +23,6 @@ export const Dropdown = ({
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Handle entrance/exit animation
   useEffect(() => {
     const isOpen = isMobile ? controlledOpen : open;
     if (isOpen) {
@@ -55,11 +54,16 @@ export const Dropdown = ({
       onMouseLeave={!isMobile ? () => setOpen(false) : undefined}
     >
       <button
-        className="font-medium text-primary hover:text-secondary transition-all delay-200"
+        className="font-medium text-text hover:text-primary transition-all delay-200 flex items-center gap-1"
         onClick={isMobile ? onClick : undefined}
         type="button"
       >
-        {title} {(isMobile ? controlledOpen : open) ? "▲" : "▼"}
+        {title}{" "}
+        {(isMobile ? controlledOpen : open) ? (
+          <FaChevronUp />
+        ) : (
+          <FaChevronDown />
+        )}
         <span className="sr-only">Toggle Dropdown</span>
       </button>
 

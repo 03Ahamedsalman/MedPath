@@ -2,17 +2,20 @@
 
 @theme {
     --color-primary: #00A7A3;
-    --color-secondary: #004B87;
     --color-background: #F4F6F8;
+    --color-secondary: #004B87;
     --color-text: #2C3E50;
     --color-border: #E5E7EB;
-    --color-accent: #017D82;
 }
 
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.max{
+    max-width: 105rem;
 }
 
 .center-column {

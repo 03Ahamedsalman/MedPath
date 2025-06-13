@@ -1,65 +1,46 @@
+import { Banner_1, MiniBanner_1 } from "@/assets/assets";
 import { ABOUT_ROUTE, CONTACT_ROUTE } from "@/utils/routes";
 
 export const Home_Data = {
   hero_section: [
     {
-      span: "Start your personalized journey with us today and grow confidently",
-      title: "Welcome to Our Awesome Platform",
+      span: "Your Trusted Guide to Global Medical Education",
+      title: "Pursue MBBS Abroad | Build a Global Medical Career",
       description:
-        "Explore endless resources, gain insights, and unlock career opportunities with our expert-backed tools and educational content.",
+        "MedPath Overseas opens doors to world-class, affordable MBBS programs at internationally accredited universities. Our expert guidance, transparent process, and end-to-end support ensure your journey to becoming a doctor is seamless and successful.",
       images: [
         {
-          src: "https://example.com/images/slide1.jpg",
-          alt: "Person exploring the online platform homepage",
+          src: Banner_1,
+          alt: "Happy medical students graduating abroad",
         },
         {
-          src: "https://example.com/images/slide1b.jpg",
-          alt: "Dashboard overview with various platform features",
+          src: MiniBanner_1,
+          alt: "Students in white coats at international medical university",
         },
       ],
       button: {
-        label: "Get Started",
+        label: "Start Your MBBS Journey",
         link: "/get-started",
       },
     },
     {
-      span: "Build expert connections to expand your professional network easily now",
-      title: "Connect With Industry Experts Today",
+      span: "Borderless Medical Education",
+      title: "Study MBBS Overseas | Become a Globally Recognized Doctor",
       description:
-        "Interact with thought leaders, join professional groups, and gain insights through direct communication and exclusive mentorship programs.",
+        "In an interconnected world, your medical education should transcend boundaries. We partner with top-ranked international universities to help you gain prestigious qualifications, cross-cultural experience, and a competitive edge in the global healthcare landscape.",
       images: [
         {
-          src: "https://example.com/images/slide2.jpg",
-          alt: "Video call with business professionals and consultants",
+          src: Banner_1,
+          alt: "International medical students in classroom setting",
         },
         {
-          src: "https://example.com/images/slide2b.jpg",
-          alt: "Mentorship dashboard showing active conversations",
+          src: MiniBanner_1,
+          alt: "Young doctor receiving international medical degree",
         },
       ],
       button: {
-        label: "Meet Experts",
-        link: "/experts",
-      },
-    },
-    {
-      span: "Advance your skills through curated content and hands-on learning experience now",
-      title: "Learn New Skills And Grow",
-      description:
-        "Access courses, tutorials, and personalized learning paths that help you build expertise and achieve your professional goals faster.",
-      images: [
-        {
-          src: "https://example.com/images/slide3.jpg",
-          alt: "Student browsing learning materials online",
-        },
-        {
-          src: "https://example.com/images/slide3b.jpg",
-          alt: "Interactive course interface on a laptop screen",
-        },
-      ],
-      button: {
-        label: "Start Learning",
-        link: "/courses",
+        label: "Explore Programs Now",
+        link: "/programs",
       },
     },
   ],
@@ -363,4 +344,34 @@ export const Home_Data = {
       },
     ],
   },
+
+  countryItems: [
+    { label: "MBBS in Russia", href: "/countries/russia" },
+    { label: "MBBS in Kyrgyzstan", href: "/countries/kyrgyzstan" },
+    { label: "MBBS in Kazakhstan", href: "/countries/kazakhstan" },
+    { label: "PG in UK", href: "/countries/uk" },
+    { label: "PG in USA", href: "/countries/usa" },
+    { label: "PG in Canada", href: "/countries/canada" },
+    { label: "PG in Australia", href: "/countries/australia" },
+  ],
+};
+
+export const daySchedules = {
+  Sunday: "Closed",
+  Monday: "10:00AM - 8:00PM",
+  Tuesday: "10:00AM - 8:00PM",
+  Wednesday: "10:00AM - 8:00PM",
+  Thursday: "10:00AM - 8:00PM",
+  Friday: "10:00AM - 8:00PM",
+  Saturday: "10:00AM - 5.00PM",
+};
+
+export const socialmediaLinks = {
+  instagram: "https://www.instagram.com/medpathoverseas?igsh=MWRpaWZzaTdlcDN6",
+  facebook: "https://www.facebook.com/medpathconsultancy",
+  linkedin:
+    "https://www.linkedin.com/company/medpath-overseas/posts/?feedView=all",
+  youtube: "https://www.youtube.com/@medpathoverseas",
+  whatsapp: "https://wa.me/917305702699",
+  email: "mailto:omedpath@gmail.com",
 };

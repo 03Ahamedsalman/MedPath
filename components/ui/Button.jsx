@@ -1,7 +1,7 @@
-const Button = ({ 
-  children = 'Hover me', 
-  color = '#dd6395',
-  className = ''
+const Button = ({
+  children = "Apply Now",
+  color = "#00A7A3",
+  className = "",
 }) => {
   return (
     <div className={className}>
@@ -16,34 +16,39 @@ const Button = ({
           inline-block 
           no-underline 
           bg-transparent 
-          transition-[color] 
-          duration-300 
           z-[1]
-          before:content-[''] 
-          before:absolute 
-          before:w-[15%] 
-          before:h-full 
-          before:top-0 
-          before:left-0 
-          before:transition-all 
-          before:duration-300 
-          before:z-[-1]
-          hover:text-white 
-          hover:transition-delay-300
-          hover:before:animate-[ani507_0.6s_forwards]
+          text-[inherit]
+          group ${className}
         `}
         style={{
-          '--btn-color': color,
-          borderColor: color,
-          color: color,
+          "--btn-color": color,
+          borderColor: "#00A7A3",
         }}
       >
-        <span className="relative z-10">{children}</span>
+        {/* Button text */}
+        <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+          {children}
+        </span>
+
+        {/* Styling and animation */}
         <style jsx global>{`
           .click-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15%;
+            height: 100%;
             background-color: var(--btn-color);
+            z-index: -1;
             transform: rotateZ(-45deg) translate(-50%, -50%);
+            transition: all 0.3s ease;
           }
+
+          .click-btn:hover::before {
+            animation: ani507 0.6s forwards;
+          }
+
           @keyframes ani507 {
             10% {
               width: 0;
@@ -51,15 +56,15 @@ const Button = ({
             }
             20% {
               width: 0;
-              transform: rotateZ(0) translate(-100%, 85%);
+              transform: rotateZ(0deg) translate(-100%, 85%);
             }
             60% {
               width: 100%;
-              transform: rotateZ(0) translate(0, 85%);
+              transform: rotateZ(0deg) translate(0, 85%);
             }
             100% {
               width: 100%;
-              transform: rotateZ(0) translate(0, 0);
+              transform: rotateZ(0deg) translate(0, 0);
             }
           }
         `}</style>

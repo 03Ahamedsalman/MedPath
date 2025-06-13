@@ -7,36 +7,32 @@ import {
   CONTACT_ROUTE,
   GALLERY_ROUTE,
   HOME_ROUTE,
-  SERVICES_ROUTE,
-  UNIVERSITIES_ROUTE,
 } from "@/utils/routes";
 import { Dropdown } from "../ui/Dropdown";
-import { FiMenu, FiX } from "react-icons/fi";
 import HamburgerToggle from "./HamburgerMenu";
 import Button from "../ui/Button";
+import { Home_Data } from "@/const/Data";
+import { FaTimes } from "react-icons/fa";
+import TopBar from "./TopBar";
 
 const Navbar = () => {
-  const universityItems = [
-    { label: "AIIMS Delhi", href: "/universities/aiims-delhi" },
-    { label: "JIPMER Puducherry", href: "/universities/jipmer" },
-    { label: "CMC Vellore", href: "/universities/cmc-vellore" },
-    { label: "KMC Manipal", href: "/universities/kmc" },
-  ];
-
-  const countryItems = [
-    { label: "MBBS in Russia", href: "/countries/russia" },
-    { label: "MBBS in Kyrgyzstan", href: "/countries/kyrgyzstan" },
-    { label: "MBBS in Kazakhstan", href: "/countries/kazakhstan" },
-    { label: "PG in UK", href: "/countries/uk" },
-    { label: "PG in USA", href: "/countries/usa" },
-    { label: "PG in Canada", href: "/countries/canada" },
-    { label: "PG in Australia", href: "/countries/australia" },
-  ];
-
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const iconRef = useRef(null);
+  const countryItems = Home_Data.countryItems;
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     if (iconRef.current) {
@@ -53,6 +49,7 @@ const Navbar = () => {
       );
     }
   }, [isMobileMenuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -71,64 +68,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full bg-primary">
-      {/* Top info bar */}
-      <div className="text-background text-sm px-4 py-2 flex flex-wrap justify-between items-center">
-        <div className="flex flex-wrap items-center gap-4 md:gap-6">
-          <span className="flex items-center gap-1 whitespace-nowrap">
-            📞 +91 96009 02959
-          </span>
-          <span className="flex items-center gap-1 whitespace-nowrap">
-            📧 studydoctora4@gamil.com
-          </span>
-          <span className="flex items-center gap-1 whitespace-nowrap">
-            🕒 Mon-Sat: 9:30AM - 6:30PM
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="hidden sm:inline">Follow Us:</span>
-          <div className="flex items-center gap-2">
-            <Link
-              href="https://www.instagram.com/medpathconsultancy"
-              target="_blank"
-            >
-              <Image
-                src="/instagramlogo.jpg"
-                alt="Instagram"
-                width={20}
-                height={20}
-              />
-            </Link>
-            <Link
-              href="https://www.facebook.com/medpathconsultancy"
-              target="_blank"
-            >
-              <Image
-                src="/facebook_log.png"
-                alt="Facebook"
-                width={20}
-                height={20}
-              />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/medpathconsultancy"
-              target="_blank"
-            >
-              <Image
-                src="/LinkedIn_icon.svg.png"
-                alt="LinkedIn"
-                width={20}
-                height={20}
-              />
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Main navigation */}
+    <div className="w-full bg-primary top-0 sticky z-[999]">
       <nav
-        className={`bg-white shadow-md px-4 py-4 md:px-6 md:py-4 flex flex-wrap justify-between items-center rounded-t-4xl sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "shadow-lg" : ""
+        className={`bg-white shadow-md px-4 py-4 md:p-10 flex flex-wrap justify-between items-center sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "shadow-lg rounded-none" : "rounded-t-4xl"
         }`}
       >
         {/* Logo */}
@@ -145,46 +88,117 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <HamburgerToggle onClick={toggleMobileMenu} />
+            <HamburgerToggle
+              onClick={toggleMobileMenu}
+              isOpen={isMobileMenuOpen}
+            />
           </div>
         </div>
 
-        {/* Navigation links */}
+        {/* Mobile Sidebar Overlay */}
+        {isMobileMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+            onClick={closeAll}
+          />
+        )}
+
+        {/* Mobile Sidebar */}
         <div
-          className={`${
-            isMobileMenuOpen ? "block" : "hidden"
-          } w-full md:w-auto md:flex md:flex-row md:items-center md:space-x-6 mt-4 md:mt-0`}
+          className={`fixed top-0 left-0 h-full w-[75%] bg-white z-50 transform transition-transform duration-300 ease-in-out shadow-xl ${
+            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } md:hidden`}
         >
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 text-primary font-medium">
+          <div className="p-4 flex justify-between items-center border-b">
+            <Link href={HOME_ROUTE} onClick={closeAll}>
+              <Image
+                src="/Medpath_icon.png"
+                alt="Medpath Logo"
+                width={180}
+                height={60}
+              />
+            </Link>
+            <button
+              onClick={closeAll}
+              className="text-gray-500 hover:text-primary right-0 absolute top-4 md:hidden"
+            >
+              <FaTimes size={44} />
+            </button>
+          </div>
+
+          <div className="overflow-y-auto h-[calc(100%-120px)] p-4">
+            <div className="flex flex-col gap-4 text-text font-medium">
+              <Link
+                href={HOME_ROUTE}
+                className="hover:text-primary py-2 border-b"
+                onClick={closeAll}
+              >
+                HOME
+              </Link>
+              <Link
+                href={ABOUT_ROUTE}
+                className="hover:text-primary py-2 border-b"
+                onClick={closeAll}
+              >
+                ABOUT US
+              </Link>
+              <Dropdown
+                title="ALL COUNTRIES"
+                items={countryItems}
+                open={openDropdown === "countries"}
+                onClick={() =>
+                  setOpenDropdown(
+                    openDropdown === "countries" ? null : "countries"
+                  )
+                }
+                dropdownKey="countries"
+                onClose={closeAll}
+                mobile={isMobileMenuOpen}
+              />
+              <Link
+                href={GALLERY_ROUTE}
+                className="hover:text-primary py-2 border-b"
+                onClick={closeAll}
+              >
+                GALLERY
+              </Link>
+              <Link
+                href={CONTACT_ROUTE}
+                className="hover:text-primary py-2 border-b"
+                onClick={closeAll}
+              >
+                CONTACT
+              </Link>
+            </div>
+
+            <div className="mt-8">
+              <Button href="/apply" className="w-full text-center">
+                APPLY NOW →
+              </Button>
+            </div>
+            <TopBar />
+          </div>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex md:flex-row md:items-center md:space-x-6">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-14 text-text font-medium">
             <Link
               href={HOME_ROUTE}
-              className="hover:text-secondary py-2 md:py-0"
+              className="hover:text-primary py-2 md:py-0"
               onClick={closeAll}
             >
-              Home
+              HOME
             </Link>
             <Link
               href={ABOUT_ROUTE}
-              className="hover:text-secondary py-2 md:py-0"
+              className="hover:text-primary py-2 md:py-0"
               onClick={closeAll}
             >
-              About Us
+              ABOUT US
             </Link>
             <Dropdown
-              title="Universities"
-              items={universityItems}
-              open={openDropdown === "universities"}
-              onClick={() =>
-                setOpenDropdown(
-                  openDropdown === "universities" ? null : "universities"
-                )
-              }
-              dropdownKey="universities"
-              onClose={closeAll}
-              mobile={isMobileMenuOpen}
-            />
-            <Dropdown
-              title="All Countries"
+              title="ALL COUNTRIES"
               items={countryItems}
               open={openDropdown === "countries"}
               onClick={() =>
@@ -198,23 +212,18 @@ const Navbar = () => {
             />
             <Link
               href={GALLERY_ROUTE}
-              className="hover:text-secondary py-2 md:py-0"
+              className="hover:text-primary py-2 md:py-0"
               onClick={closeAll}
             >
-              Gallery
+              GALLERY
             </Link>
             <Link
               href={CONTACT_ROUTE}
-              className="hover:text-secondary py-2 md:py-0"
+              className="hover:text-primary py-2 md:py-0"
               onClick={closeAll}
             >
-              Contact
+              CONTACT
             </Link>
-          </div>
-
-          {/* CTA Button - shown in mobile menu */}
-          <div className="mt-4 md:hidden">
-            <Button href="/apply">APPLY NOW →</Button>
           </div>
         </div>
 

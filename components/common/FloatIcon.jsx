@@ -30,7 +30,7 @@ const FloatIcon = () => {
       href={socialmediaLinks.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed md:bottom-6 bottom-20 md:right-6 right-4 z-50 p-4 rounded-full shadow-lg hover:opacity-80 transition-opacity duration-300"
+      className="fixed md:bottom-6 bottom-20 md:right-6 right-4 z-50 p-3 rounded-full shadow-lg hover:opacity-80 transition-opacity duration-300"
       title="Chat on WhatsApp"
       ref={iconRef}
       // Initial styles (will be overridden by GSAP)
@@ -40,7 +40,7 @@ const FloatIcon = () => {
         backgroundColor: "#25D366",
       }}
     >
-      <FaWhatsapp size={28} color="#fff" />
+      <FaWhatsapp size={24} color="#fff" />
     </a>
   );
 };

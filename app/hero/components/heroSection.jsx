@@ -111,8 +111,19 @@ const HeroSection = () => {
             >
               {item.span.toUpperCase()}
             </span>
-            <h1 className="text-4xl font-bold text-background " ref={titleRef}>
-              {item.title}
+            <h1 className="text-5xl font-bold text-background" ref={titleRef}>
+              {activeIndex === 0 ? (
+                <>
+                  WELCOME TO{" "}
+                  <span className="text-primary">MEDPATH OVERSEAS PVT</span>
+                </>
+              ) : activeIndex === 1 ? (
+                <>
+                  MBBS | <span className="text-primary">GLOBAL</span> | FUTURE
+                </>
+              ) : (
+                item.title
+              )}
             </h1>
             <p
               className="md:text-lg text-base leading-tight text-background"
@@ -152,7 +163,7 @@ const HeroSection = () => {
                 (prev) => (prev - 1 + heroData.length) % heroData.length
               )
             }
-            className="bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-md transition-colors"
+            className="bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-md transition-colors cursor-pointer"
           >
             <svg
               width="24"
@@ -172,7 +183,7 @@ const HeroSection = () => {
             onClick={() =>
               setActiveIndex((prev) => (prev + 1) % heroData.length)
             }
-            className="bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-md transition-colors"
+            className="bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-md transition-colors cursor-pointer"
           >
             <svg
               width="24"

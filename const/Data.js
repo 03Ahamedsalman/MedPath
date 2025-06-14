@@ -1,11 +1,22 @@
-import { Banner_1, MiniBanner_1 } from "@/assets/assets";
+import {
+  AL,
+  Banner_1,
+  Banner_2,
+  Bashkir,
+  bukhara,
+  iner,
+  jalala,
+  Kazahk,
+  kazan,
+  MiniBanner_1,
+  MiniBanner_2,
+} from "@/assets/assets";
 import { ABOUT_ROUTE, CONTACT_ROUTE } from "@/utils/routes";
 
 export const Home_Data = {
   hero_section: [
     {
       span: "Navigating Your Medical Journey",
-      title: "WELCOME TO MEDPATH OVERSEAS PVT",
       description:
         "At MedPath Overseas, we specialize in guiding aspiring doctors to secure affordable, high-quality medical education at top-ranked international universities. With years of experience, transparent advice, and personalized support, we make your MBBS journey smooth and successful.",
       images: [
@@ -25,16 +36,15 @@ export const Home_Data = {
     },
     {
       span: "Navigating Your Medical Journey",
-      title: "MBBS | GLOBAL | FUTURE",
       description:
         "In today’s world, medicine knows no borders — and neither should your education.At MedPath Overseas, we connect ambitious students to globally recognized MBBS programs that shape them into confident, internationally qualified doctors.",
       images: [
         {
-          src: Banner_1,
+          src: Banner_2,
           alt: "International medical students in classroom setting",
         },
         {
-          src: MiniBanner_1,
+          src: MiniBanner_2,
           alt: "Young doctor receiving international medical degree",
         },
       ],
@@ -44,6 +54,67 @@ export const Home_Data = {
       },
     },
   ],
+  our_universities: {
+    title: "Our University",
+    universities: [
+      {
+        id: 0,
+        title: "Al-Farabi Kazakh National University",
+        image: {
+          src: AL,
+          alt: "Al-Farabi Kazakh National University",
+        },
+      },
+      {
+        id: 1,
+        title: "Bashkir state medical University",
+        image: {
+          src: Bashkir,
+          alt: "Bashkir state medical University",
+        },
+      },
+      {
+        id: 2,
+        title: "Bukhara State Medical Institute",
+        image: {
+          src: bukhara,
+          alt: "BUKHARA STATE MEDICAL INSTITUTE",
+        },
+      },
+      {
+        id: 3,
+        title: "International School of Medicine",
+        image: {
+          src: iner,
+          alt: "International School of Medicine",
+        },
+      },
+      {
+        id: 4,
+        title: "Kazakh National Medical University",
+        image: {
+          src: Kazahk,
+          alt: "Kazakh National Medical University",
+        },
+      },
+      {
+        id: 5,
+        title: "Jalalabad state medical University",
+        image: {
+          src: jalala,
+          alt: "Jalalabad state medical University",
+        },
+      },
+      {
+        id: 6,
+        title: "Kazan state medical University",
+        image: {
+          src: kazan,
+          alt: "Kazan state medical University",
+        },
+      },
+    ],
+  },
   about_section: {
     span: "About Us",
     title: "Welcome to MedPath",
@@ -51,7 +122,26 @@ export const Home_Data = {
       "Established in 2025, MBBS Consultancy is dedicated to helping Indian students fulfill their dream of becoming globally recognized doctors. As one of India’s leading facilitators of overseas medical education, we specialize in guiding aspiring medical students to pursue MBBS in top-ranked international universities recognized by the National Medical Commission (NMC), formerly known as the Medical Council of India (MCI).",
     description_two:
       "Our expert team offers comprehensive support throughout the entire journey—from personalized admission counseling to complete assistance during the admission process and beyond. With a student-first approach, we ensure a smooth and transparent experience from application to graduation. Additionally, we provide visa assistance, accommodation support, and post-arrival guidance, making the transition to studying abroad seamless and stress-free. Our mission is to offer affordable education options and unparalleled guidance, helping students realize their aspirations to become successful doctors in global healthcare systems.",
-    image: "https://example.com/images/about.jpg",
+    lists: [
+      {
+        id: 0,
+        title: "Expert Guidance: ",
+        description:
+          "Navigate abroad’s medical education with personalized expert advice.",
+      },
+      {
+        id: 1,
+        title: "Global Connections: ",
+        description:
+          "Access renowned universities worldwide for your MBBS studies.",
+      },
+      {
+        id: 2,
+        title: "Seamless Process: ",
+        description:
+          "Simplify your journey from application to cultural integration effortlessly.",
+      },
+    ],
   },
   popular_countries: [
     {
@@ -135,65 +225,6 @@ export const Home_Data = {
       button_text: "Book Now",
       button_link: ABOUT_ROUTE,
     },
-  },
-  top_universities: {
-    title: "Top Universities to Study Abroad",
-    russia: [
-      {
-        name: "Kazakh National Medical University",
-        description:
-          "One of the leading medical universities in Kazakhstan, known for its high academic standards and research opportunities.",
-        image: "https://example.com/images/kazakh_university.jpg",
-      },
-      {
-        name: "Tashkent Medical Academy",
-        description:
-          "A prestigious institution in Uzbekistan offering a wide range of medical programs with international recognition.",
-        image: "https://example.com/images/tashkent_university.jpg",
-      },
-    ],
-    ukraine: [
-      {
-        name: "Kharkiv National Medical University",
-        description:
-          "A top-ranked medical university in Ukraine, known for its comprehensive medical programs and research facilities.",
-        image: "https://example.com/images/kharkiv_university.jpg",
-      },
-      {
-        name: "Lviv National Medical University",
-        description:
-          "Renowned for its quality education and international collaborations, Lviv National Medical University offers a vibrant learning environment.",
-        image: "https://example.com/images/lviv_university.jpg",
-      },
-    ],
-    kazakhstan: [
-      {
-        name: "Al-Farabi Kazakh National University",
-        description:
-          "One of the largest and most prestigious universities in Kazakhstan, offering a wide range of medical programs.",
-        image: "https://example.com/images/al_farabi_university.jpg",
-      },
-      {
-        name: "Astana Medical University",
-        description:
-          "A leading medical institution in Kazakhstan, known for its innovative teaching methods and research initiatives.",
-        image: "https://example.com/images/astana_university.jpg",
-      },
-    ],
-    india: [
-      {
-        name: "All India Institute of Medical Sciences (AIIMS)",
-        description:
-          "AIIMS is one of the most prestigious medical institutions in India, known for its excellence in medical education and research.",
-        image: "https://example.com/images/aiims.jpg",
-      },
-      {
-        name: "Postgraduate Institute of Medical Education and Research (PGIMER)",
-        description:
-          "PGIMER is a leading medical and research institution in India, offering advanced medical education and training.",
-        image: "https://example.com/images/pgimer.jpg",
-      },
-    ],
   },
   elgibility: [
     {
@@ -344,16 +375,96 @@ export const Home_Data = {
       },
     ],
   },
-
   countryItems: [
     { label: "MBBS in Russia", href: "/countries/russia" },
     { label: "MBBS in Kyrgyzstan", href: "/countries/kyrgyzstan" },
     { label: "MBBS in Kazakhstan", href: "/countries/kazakhstan" },
-    { label: "PG in UK", href: "/countries/uk" },
-    { label: "PG in USA", href: "/countries/usa" },
-    { label: "PG in Canada", href: "/countries/canada" },
-    { label: "PG in Australia", href: "/countries/australia" },
+    { label: "MBBS IN Vietnam", href: "/countries/vietnam" },
+    { label: "MBBS IN Uzbekistan", href: "/countries/uzbekistan" },
   ],
+  // our_universities: {
+  //   title: "Top Universities to Study Abroad",
+  //   russia: [
+  //     {
+  //       name: "Kazakh National Medical University",
+  //       description:
+  //         "One of the leading medical universities in Kazakhstan, known for its high academic standards and research opportunities.",
+  //       image: {
+  //         src: "https://example.com/images/kazakh_university.jpg",
+  //         alt: "Kazakh National Medical University",
+  //       },
+  //     },
+  //     {
+  //       name: "Tashkent Medical Academy",
+  //       description:
+  //         "A prestigious institution in Uzbekistan offering a wide range of medical programs with international recognition.",
+  //       image: {
+  //         src: "https://example.com/images/tashkent_university.jpg",
+  //         alt: "Tashkent Medical Academy",
+  //       },
+  //     },
+  //   ],
+  //   ukraine: [
+  //     {
+  //       name: "Kharkiv National Medical University",
+  //       description:
+  //         "A top-ranked medical university in Ukraine, known for its comprehensive medical programs and research facilities.",
+  //       image: {
+  //         src: "https://example.com/images/tashkent_university.jpg",
+  //         alt: "Tashkent Medical Academy",
+  //       },
+  //     },
+  //     {
+  //       name: "Lviv National Medical University",
+  //       description:
+  //         "Renowned for its quality education and international collaborations, Lviv National Medical University offers a vibrant learning environment.",
+  //       image: {
+  //         src: "https://example.com/images/tashkent_university.jpg",
+  //         alt: "Tashkent Medical Academy",
+  //       },
+  //     },
+  //   ],
+  //   kazakhstan: [
+  //     {
+  //       name: "Al-Farabi Kazakh National University",
+  //       description:
+  //         "One of the largest and most prestigious universities in Kazakhstan, offering a wide range of medical programs.",
+  //       image: {
+  //         src: "https://example.com/images/tashkent_university.jpg",
+  //         alt: "Tashkent Medical Academy",
+  //       },
+  //     },
+  //     {
+  //       name: "Astana Medical University",
+  //       description:
+  //         "A leading medical institution in Kazakhstan, known for its innovative teaching methods and research initiatives.",
+  //       image: {
+  //         src: "https://example.com/images/tashkent_university.jpg",
+  //         alt: "Tashkent Medical Academy",
+  //       },
+  //     },
+  //   ],
+  //   india: [
+  //     {
+  //       name: "All India Institute of Medical Sciences (AIIMS)",
+  //       description:
+  //         "AIIMS is one of the most prestigious medical institutions in India, known for its excellence in medical education and research.",
+  //       image: {
+  //         src: "https://example.com/images/tashkent_university.jpg",
+  //         alt: "Tashkent Medical Academy",
+  //       },
+  //     },
+  //     {
+  //       name: "Postgraduate Institute of Medical Education and Research (PGIMER)",
+  //       description:
+  //         "PGIMER is a leading medical and research institution in India, offering advanced medical education and training.",
+  //       image: {
+  //         src: "https://example.com/images/tashkent_university.jpg",
+  //         alt: "Tashkent Medical Academy",
+  //       },
+  //     },
+  //   ],
+  // },
 };
 
 export const daySchedules = {
@@ -371,7 +482,7 @@ export const socialmediaLinks = {
   facebook: "https://www.facebook.com/medpathconsultancy",
   linkedin:
     "https://www.linkedin.com/company/medpath-overseas/posts/?feedView=all",
-  youtube: "https://www.youtube.com/@medpathoverseas",
+  youtube: "#",
   whatsapp: "https://wa.me/917305702699",
   email: "mailto:omedpath@gmail.com",
 };

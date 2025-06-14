@@ -10,6 +10,7 @@ export const Dropdown = ({
   open: controlledOpen,
   onClick,
   dropdownKey,
+  className = "",
 }) => {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -49,12 +50,12 @@ export const Dropdown = ({
 
   return (
     <div
-      className="relative"
+      className={`relative ${className}`}
       onMouseEnter={!isMobile ? () => setOpen(true) : undefined}
       onMouseLeave={!isMobile ? () => setOpen(false) : undefined}
     >
       <button
-        className="font-medium text-text hover:text-primary transition-all delay-200 flex items-center gap-1"
+        className="text-text hover:text-primary transition-all delay-200 flex items-center gap-1 font-500 w-full justify-between"
         onClick={isMobile ? onClick : undefined}
         type="button"
       >

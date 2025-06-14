@@ -45,7 +45,7 @@ const HeroSection = () => {
     bgTl
       .fromTo(
         bgImageRef.current,
-        { scale: 1.2, opacity: 0 },
+        { scale: 1.2, opacity: 0.3 },
         { scale: 1.1, opacity: 1, duration: 1.2, ease: "power2.out" }
       )
       .to(
@@ -66,11 +66,11 @@ const HeroSection = () => {
 
     blobTl.fromTo(
       blobRef.current,
-      { scale: 1, opacity: 0 },
+      { scale: 1.2, opacity: 0 },
       { scale: 1.2, opacity: 1, duration: 1, ease: "power2.out" }
     );
     blobTl.to(blobRef.current, {
-      scale: 1,
+      scale: 1.2,
       duration: 10,
       ease: "power1.out",
     });
@@ -104,7 +104,7 @@ const HeroSection = () => {
 
         <div className="flex md:flex-row flex-col gap-12 max items-center justify-around">
           {/* Text Content */}
-          <div ref={textRef} className="md:w-[50%] w-full flex flex-col gap-4">
+          <div ref={textRef} className="md:w-[50%] w-full flex flex-col gap-6">
             <span
               className="inline-block bg-primary text-sm text-background px-4 py-2 rounded-full font-medium w-fit"
               ref={spanRef}
@@ -114,15 +114,19 @@ const HeroSection = () => {
             <h1 className="text-4xl font-bold text-background " ref={titleRef}>
               {item.title}
             </h1>
-            <p className="md:text-lg text-base leading-tight text-background" ref={descRef}>
+            <p
+              className="md:text-lg text-base leading-tight text-background"
+              ref={descRef}
+            >
               {item.description}
             </p>
             <div ref={btnRef}>
-              <Button className="text-background w-[50%] max-md:w-full max-md:text-center">
-                {"Contact"}
+              <Button className="text-background max-md:w-full max-md:text-center">
+                {item.button.label}
               </Button>
             </div>
           </div>
+          {/* Right Image */}
           <div
             ref={rightImageRef}
             className="md:w-[40%] w-full rounded-full z-10"
@@ -137,8 +141,52 @@ const HeroSection = () => {
             src={Maskgroup}
             ref={blobRef}
             alt="group image"
-            className="absolute bottom-0 -z-10"
+            className="absolute bottom-0 right-0 -z-10"
           />
+        </div>
+        <div className="absolute right-[35%] bottom-10 z-20 flex gap-4 md:gap-2">
+          <button
+            aria-label="Previous"
+            onClick={() =>
+              setActiveIndex(
+                (prev) => (prev - 1 + heroData.length) % heroData.length
+              )
+            }
+            className="bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-md transition-colors"
+          >
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            aria-label="Next"
+            onClick={() =>
+              setActiveIndex((prev) => (prev + 1) % heroData.length)
+            }
+            className="bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-md transition-colors"
+          >
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

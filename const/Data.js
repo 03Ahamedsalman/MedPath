@@ -4,10 +4,10 @@ import { ABOUT_ROUTE, CONTACT_ROUTE } from "@/utils/routes";
 export const Home_Data = {
   hero_section: [
     {
-      span: "Your Trusted Guide to Global Medical Education",
+      span: "Navigating Your Medical Journey",
       title: "Pursue MBBS Abroad | Build a Global Medical Career",
       description:
-        "MedPath Overseas opens doors to world-class, affordable MBBS programs at internationally accredited universities. Our expert guidance, transparent process, and end-to-end support ensure your journey to becoming a doctor is seamless and successful.",
+        "At MedPath Overseas, we specialize in guiding aspiring doctors to secure affordable, high-quality medical education at top-ranked international universities. With years of experience, transparent advice, and personalized support, we make your MBBS journey smooth and successful.",
       images: [
         {
           src: Banner_1,
@@ -19,15 +19,15 @@ export const Home_Data = {
         },
       ],
       button: {
-        label: "Start Your MBBS Journey",
+        label: "GET STARTED",
         link: "/get-started",
       },
     },
     {
-      span: "Borderless Medical Education",
-      title: "Study MBBS Overseas | Become a Globally Recognized Doctor",
+      span: "Navigating Your Medical Journey",
+      title: "MBBS | GLOBAL | FUTURE",
       description:
-        "In an interconnected world, your medical education should transcend boundaries. We partner with top-ranked international universities to help you gain prestigious qualifications, cross-cultural experience, and a competitive edge in the global healthcare landscape.",
+        "In today’s world, medicine knows no borders — and neither should your education.At MedPath Overseas, we connect ambitious students to globally recognized MBBS programs that shape them into confident, internationally qualified doctors.",
       images: [
         {
           src: Banner_1,
@@ -39,8 +39,8 @@ export const Home_Data = {
         },
       ],
       button: {
-        label: "Explore Programs Now",
-        link: "/programs",
+        label: "GET STARTED",
+        link: "/get-started",
       },
     },
   ],

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -6,6 +7,11 @@
     --color-secondary: #004B87;
     --color-text: #2C3E50;
     --color-border: #E5E7EB;
+    --font-weight-600: 600;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
 }
 
 .center {
@@ -14,7 +20,7 @@
     align-items: center;
 }
 
-.max{
+.max {
     max-width: 105rem;
 }
 

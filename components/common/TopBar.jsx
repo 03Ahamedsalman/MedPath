@@ -24,8 +24,8 @@ function getTodaySchedule() {
 
 const TopBar = () => {
   return (
-    <div className="text-background bg-primary text-sm px-8 py-2 flex flex-wrap justify-between items-center ">
-      <div className="flex flex-wrap items-center gap-4 md:gap-6 jus">
+    <div className="text-background bg-primary text-sm px-20 py-2 flex flex-wrap justify-between items-center ">
+      <div className="md:flex hidden flex-wrap items-center gap-4 md:gap-6">
         <a
           href={socialmediaLinks.whatsapp}
           target="_blank"
@@ -44,8 +44,8 @@ const TopBar = () => {
           <FaRegClock /> {getTodaySchedule()}
         </span>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="hidden sm:inline">Follow Us:</span>
+      <div className="flex items-center md:gap-2 gap-6 max-md:justify-center max-md:w-full">
+        <span>Follow Us:</span>
         <div className="flex items-center gap-2">
           <Link href={socialmediaLinks.instagram} target="_blank">
             <Image

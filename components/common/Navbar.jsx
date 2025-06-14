@@ -11,9 +11,25 @@ import {
 import { Dropdown } from "../ui/Dropdown";
 import HamburgerToggle from "./HamburgerMenu";
 import Button from "../ui/Button";
-import { Home_Data } from "@/const/Data";
-import { FaTimes } from "react-icons/fa";
+import { daySchedules, Home_Data, socialmediaLinks } from "@/const/Data";
+import { FaRegClock, FaTimes } from "react-icons/fa";
 import TopBar from "./TopBar";
+import { IoCallOutline } from "react-icons/io5";
+import { MdOutlineEmail } from "react-icons/md";
+function getTodaySchedule() {
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const today = new Date().getDay();
+  const dayName = days[today];
+  return `${dayName}: ${daySchedules[dayName]}`;
+}
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -70,8 +86,8 @@ const Navbar = () => {
   return (
     <div className="w-full bg-primary top-0 sticky z-[999]">
       <nav
-        className={`bg-white shadow-md px-4 py-4 md:p-10 flex flex-wrap justify-between items-center sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "shadow-lg rounded-none" : "rounded-t-4xl"
+        className={`bg-white shadow-md px-4 py-4 md:px-28 md:py-10 flex flex-wrap justify-between items-center sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "shadow-lg rounded-none" : "md:rounded-tl-[80px]"
         }`}
       >
         {/* Logo */}
@@ -114,7 +130,7 @@ const Navbar = () => {
               <Image
                 src="/Medpath_icon.png"
                 alt="Medpath Logo"
-                width={180}
+                width={120}
                 height={60}
               />
             </Link>
@@ -126,7 +142,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="overflow-y-auto h-[calc(100%-120px)] p-4">
+          <div className="overflow-y-auto h-[calc(100%-120px)] p-4 font-500">
             <div className="flex flex-col gap-4 text-text font-medium">
               <Link
                 href={HOME_ROUTE}
@@ -154,6 +170,7 @@ const Navbar = () => {
                 dropdownKey="countries"
                 onClose={closeAll}
                 mobile={isMobileMenuOpen}
+                className="hover:text-primary py-2 border-b"
               />
               <Link
                 href={GALLERY_ROUTE}
@@ -172,17 +189,35 @@ const Navbar = () => {
             </div>
 
             <div className="mt-8">
-              <Button href="/apply" className="w-full text-center">
-                APPLY NOW →
+              <Button href="/apply" className="w-full justify-center">
+                APPLY NOW
               </Button>
             </div>
-            <TopBar />
+            <div className="flex flex-col gap-2 mt-4">
+              <a
+                href={socialmediaLinks.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 whitespace-nowrap "
+              >
+                <IoCallOutline /> +91 73057 02699
+              </a>
+              <a
+                href={socialmediaLinks.email}
+                className="flex items-center gap-1 whitespace-nowrap "
+              >
+                <MdOutlineEmail /> omedpath@gmail.com
+              </a>
+              <span className="flex items-center gap-1 whitespace-nowrap">
+                <FaRegClock /> {getTodaySchedule()}
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:flex-row md:items-center md:space-x-6">
-          <div className="flex flex-col md:flex-row gap-4 md:gap-14 text-text font-medium">
+        <div className="hidden md:flex md:flex-row md:items-center md:space-x-6 font-bold">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-14 text-text font-500">
             <Link
               href={HOME_ROUTE}
               className="hover:text-primary py-2 md:py-0"
@@ -229,7 +264,7 @@ const Navbar = () => {
 
         {/* CTA Button - desktop */}
         <div className="hidden md:flex items-center">
-          <Button href="/apply">APPLY NOW →</Button>
+          <Button href="/apply">APPLY NOW</Button>
         </div>
       </nav>
     </div>

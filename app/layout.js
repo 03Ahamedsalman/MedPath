@@ -3,6 +3,7 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import LenisProvider from "@/components/common/LenisProvider";
 import TopBar from "@/components/common/TopBar";
+import PopupForm from "@/components/forms/PopupForm";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,14 +13,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/Medpath_icon.png" />
+      </head>
       <body
         className={`flex flex-col min-h-screen scroll-smooth overflow-y-auto`}
         style={{ scrollBehavior: "smooth" }}
       >
         <LenisProvider>
-          <div className="hidden sm:block">
-            <TopBar />
-          </div>
+          <PopupForm />
+          <TopBar />
           <Navbar />
           <div className="flex-1 flex flex-col">{children}</div>
           <Footer />

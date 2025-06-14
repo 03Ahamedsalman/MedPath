@@ -1,18 +1,22 @@
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+
 const Button = ({
   children = "Apply Now",
   color = "#00A7A3",
   className = "",
+  href = "#",
 }) => {
   return (
     <div className={className}>
-      <a
-        href="#"
+      <Link
+        href={href}
         className={`
           click-btn 
           relative 
           border 
           overflow-hidden 
-          px-5 py-2 
+          px-6 py-4 
           inline-block 
           no-underline 
           bg-transparent 
@@ -25,9 +29,8 @@ const Button = ({
           borderColor: "#00A7A3",
         }}
       >
-        {/* Button text */}
-        <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-          {children}
+        <span className="relative z-10 transition-colors duration-300 group-hover:text-background flex items-center gap-2 text-sm font-bold justify-center">
+          {children} <FaArrowRight />
         </span>
 
         {/* Styling and animation */}
@@ -68,7 +71,7 @@ const Button = ({
             }
           }
         `}</style>
-      </a>
+      </Link>
     </div>
   );
 };

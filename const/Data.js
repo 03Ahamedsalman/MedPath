@@ -5,7 +5,7 @@ export const Home_Data = {
   hero_section: [
     {
       span: "Navigating Your Medical Journey",
-      title: "Pursue MBBS Abroad | Build a Global Medical Career",
+      title: "WELCOME TO MEDPATH OVERSEAS PVT",
       description:
         "At MedPath Overseas, we specialize in guiding aspiring doctors to secure affordable, high-quality medical education at top-ranked international universities. With years of experience, transparent advice, and personalized support, we make your MBBS journey smooth and successful.",
       images: [
@@ -357,13 +357,13 @@ export const Home_Data = {
 };
 
 export const daySchedules = {
-  Sunday: "Closed",
+  Sunday: "10:00AM - 5.00PM",
   Monday: "10:00AM - 8:00PM",
   Tuesday: "10:00AM - 8:00PM",
   Wednesday: "10:00AM - 8:00PM",
   Thursday: "10:00AM - 8:00PM",
   Friday: "10:00AM - 8:00PM",
-  Saturday: "10:00AM - 5.00PM",
+  Saturday: "10:00AM - 8.00PM",
 };
 
 export const socialmediaLinks = {

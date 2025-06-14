@@ -4,6 +4,8 @@ import Footer from "@/components/common/Footer";
 import LenisProvider from "@/components/common/LenisProvider";
 import TopBar from "@/components/common/TopBar";
 import PopupForm from "@/components/forms/PopupForm";
+import FixedIcons from "@/components/common/FixedIcons";
+import FloatIcon from "@/components/common/FloatIcon";
 
 export const metadata = {
   title: "Create Next App",
@@ -22,6 +24,8 @@ export default function RootLayout({ children }) {
         style={{ scrollBehavior: "smooth" }}
       >
         <LenisProvider>
+          <FloatIcon />
+          <FixedIcons />
           <PopupForm />
           <TopBar />
           <Navbar />

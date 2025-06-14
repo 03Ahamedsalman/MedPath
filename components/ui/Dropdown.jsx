@@ -25,6 +25,19 @@ export const Dropdown = ({
   }, []);
 
   useEffect(() => {
+    if (!(isMobile ? controlledOpen : open)) return;
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open, controlledOpen, isMobile]);
+
+  useEffect(() => {
     const isOpen = isMobile ? controlledOpen : open;
     if (isOpen) {
       gsap.set(dropdownRef.current, { display: "block" });
@@ -48,6 +61,22 @@ export const Dropdown = ({
     }
   }, [open, controlledOpen, isMobile]);
 
+  const closeDropdown = () => {
+    if (isMobile) {
+      onClick(false);
+    } else {
+      setOpen(false);
+    }
+  };
+
+  const toggleDropdown = () => {
+    if (isMobile) {
+      onClick(!controlledOpen);
+    } else {
+      setOpen(!open);
+    }
+  };
+
   return (
     <div
       className={`relative ${className}`}
@@ -56,8 +85,9 @@ export const Dropdown = ({
     >
       <button
         className="text-text hover:text-primary transition-all delay-200 flex items-center gap-1 font-500 w-full justify-between"
-        onClick={isMobile ? onClick : undefined}
+        onClick={toggleDropdown}
         type="button"
+        aria-expanded={isMobile ? controlledOpen : open}
       >
         {title}{" "}
         {(isMobile ? controlledOpen : open) ? (
@@ -70,8 +100,10 @@ export const Dropdown = ({
 
       <div
         ref={dropdownRef}
-        className="absolute z-50 bg-white shadow-xl rounded-lg w-72 p-2 space-y-1"
-        style={{ display: "none" }}
+        className="absolute z-50 bg-white shadow-xl rounded-lg w-72 p-2 space-y-1 -ml-4"
+        style={{
+          display: (isMobile ? controlledOpen : open) ? "block" : "none",
+        }}
       >
         {items.map((item, idx) => (
           <Link
@@ -93,6 +125,7 @@ export const Dropdown = ({
               })
             }
             className="dropdown-item flex items-center justify-between px-3 py-2 text-sm text-gray-700 rounded-md transition-all duration-300 ease-in-out hover:bg-blue-50 hover:text-blue-700"
+            onClick={closeDropdown}
           >
             <span>
               {item.icon || "📘"} {item.label}

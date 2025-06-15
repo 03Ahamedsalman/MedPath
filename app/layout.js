@@ -19,12 +19,16 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/Medpath_icon.png" />
+        <style>
+          @import
+          url(&#39;https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap&#39;);
+        </style>
       </head>
       <body
         className={`flex flex-col min-h-screen scroll-smooth overflow-y-auto`}
         style={{ scrollBehavior: "smooth" }}
       >
-        <LenisProvider>
+        {/* <LenisProvider> */}
           <FloatIcon />
           <FixedIcons />
           <PopupForm />
@@ -32,7 +36,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <div className="flex-1 flex flex-col">{children}</div>
           <Footer />
-        </LenisProvider>
+        {/* </LenisProvider> */}
       </body>
     </html>
   );

@@ -5,6 +5,12 @@ import MiniBanner_2 from "./MiniBanner_2.jpeg";
 import Maskgroup from "./shape_1.webp";
 import choose_shape from "./choose_shape.webp";
 import h2_about_shape01 from "./h2_about_shape01.png";
+import backgroundImage1 from "./h2_about_shape03.png";
+import backgroundImage2 from "./team_bg.jpg";
+import popupImg from "./popup-img.jpg";
+import mailIcon from "./mailIcon.webp";
+import ctabg from "./cta-bg1.webp";
+import h2_about_shape03 from "./h2_about_shape03.png";
 
 // Universite Image
 import AL from "./universities/Al-Farabi Kazakh National University.webp";
@@ -34,6 +40,12 @@ export {
   MiniBanner_2,
   choose_shape,
   h2_about_shape01,
+  backgroundImage1,
+  backgroundImage2,
+  popupImg,
+  mailIcon,
+  h2_about_shape03,
+  ctabg,
 
   // Universite Image
   AL,

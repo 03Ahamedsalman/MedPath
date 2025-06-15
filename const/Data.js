@@ -143,6 +143,100 @@ export const Home_Data = {
       },
     ],
   },
+  google_testimonials_section: {
+    title: "Google Testimonials",
+    testimonials: [
+      {
+        name: "B. Bhuvanes War!",
+        date: "2024-09-23",
+        review:
+          "Study Doctor keeps students and parents informed about the application process and progress",
+        rating: 5,
+        userimageString:
+          "https://ui-avatars.com/api/?name=BhuvanesWar&size=200&rounded=true",
+      },
+      {
+        name: "KAMARDEN Safi",
+        date: "2024-09-22",
+        review:
+          "Genuine consultant for abroad medical education, trustable and official representative for abroad medical education for top universities.",
+        rating: 5,
+        userimageString:
+          "https://ui-avatars.com/api/?name=KAMARDEN Safi&size=200&rounded=true",
+      },
+      {
+        name: "G. Vijaya Rajsendhiran",
+        date: "2024-09-22",
+        review:
+          "Good service. Has all the information regarding universities fees, course, offered etc",
+        rating: 3,
+        userimageString:
+          "https://ui-avatars.com/api/?name=G. Vijaya Rajsendhiran&size=200&rounded=true",
+      },
+      {
+        name: "B. Bhuvanes War!",
+        date: "2024-09-23",
+        review:
+          "Study Doctor keeps students and parents informed about the application process and progress",
+        rating: 2,
+        userimageString:
+          "https://ui-avatars.com/api/?name=BhuvanesWar&size=200&rounded=true",
+      },
+      {
+        name: "KAMARDEN Safi",
+        date: "2024-09-22",
+        review:
+          "Genuine consultant for abroad medical education, trustable and official representative for abroad medical education for top universities.",
+        rating: 3,
+        userimageString:
+          "https://ui-avatars.com/api/?name=KAMARDEN Safi&size=200&rounded=true",
+      },
+      {
+        name: "G. Vijaya Rajsendhiran",
+        date: "2024-09-22",
+        review:
+          "Good service. Has all the information regarding universities fees, course, offered etc",
+        rating: 1,
+        userimageString:
+          "https://ui-avatars.com/api/?name=G. Vijaya Rajsendhiran&size=200&rounded=true",
+      },
+    ],
+  },
+  our_services: {
+    title: "Our Services",
+    services: [
+      {
+        title: "Carrer Counselling",
+      },
+      {
+        title: "Immigration Clearance",
+      },
+      {
+        title: "University Selection & Admission",
+      },
+      {
+        title: "Visa/Travel/Bank Loan Assistance",
+      },
+      {
+        title: "MCI Approval",
+      },
+      {
+        title: "Scholorship",
+      },
+      {
+        title: "Documentation Verification",
+      },
+      {
+        title: "Old Student Reference",
+      },
+      {
+        title: "PG Admission",
+      },
+      {
+        title: "UK Work Placment",
+      },
+    ],
+  },
   popular_countries: [
     {
       name: "Russia",
@@ -175,47 +269,7 @@ export const Home_Data = {
       },
     },
   ],
-  our_services: {
-    title: "Our Services",
-    services: [
-      {
-        title: "Free Personal Counselling",
-        description:
-          "Our expert counsellors help you through the finding out your best option from various countries and universities for your MBBS abroad.",
-        image: "https://example.com/images/counseling.jpg",
-      },
-      {
-        title: "Visa",
-        description:
-          "At MBBS Abroad Ahmedabad, we understand that the process of studying abroad involves more than just securing admission to a medical university.",
-        image: "https://example.com/images/admission.jpg",
-      },
-      {
-        title: "Complete Admission Assistance",
-        description:
-          "After the selection of the university, our team will take you through the admission process and share the details.",
-        image: "https://example.com/images/visa.jpg",
-      },
-      {
-        title: "Travel Assistance",
-        description:
-          "We provide comprehensive travel assistance, ensuring a smooth journey from India to your chosen destination.",
-        image: "https://example.com/images/travel.jpg",
-      },
-      {
-        title: "Accommodation",
-        description:
-          "We assist in finding suitable accommodation options that meet your needs and budget.",
-        image: "https://example.com/images/accommodation.jpg",
-      },
-      {
-        title: "Post Arrival Guidance",
-        description:
-          "Our support continues even after you arrive, helping you settle in and adapt to your new environment.",
-        image: "https://example.com/images/post_arrival.jpg",
-      },
-    ],
-  },
+
   free_demo_section: {
     title: "Book a Free Demo Session",
     description:
@@ -376,11 +430,11 @@ export const Home_Data = {
     ],
   },
   countryItems: [
-    { label: "MBBS in Russia", href: "/countries/russia" },
-    { label: "MBBS in Kyrgyzstan", href: "/countries/kyrgyzstan" },
-    { label: "MBBS in Kazakhstan", href: "/countries/kazakhstan" },
-    { label: "MBBS IN Vietnam", href: "/countries/vietnam" },
-    { label: "MBBS IN Uzbekistan", href: "/countries/uzbekistan" },
+    { id: 1, label: "MBBS in Russia", href: "/countries/russia" },
+    { id: 2, label: "MBBS in Kyrgyzstan", href: "/countries/kyrgyzstan" },
+    { id: 3, label: "MBBS in Kazakhstan", href: "/countries/kazakhstan" },
+    { id: 4, label: "MBBS IN Vietnam", href: "/countries/vietnam" },
+    { id: 5, label: "MBBS IN Uzbekistan", href: "/countries/uzbekistan" },
   ],
   // our_universities: {
   //   title: "Top Universities to Study Abroad",

@@ -2,31 +2,29 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { hasPopupShownRecently, markPopupAsShown } from "@/utils/utils";
+import PhoneInput from "react-phone-number-input";
 import Button from "../ui/Button";
+import { validateInquiryForm } from "@/utils/validations";
+import { Home_Data } from "@/const/Data";
+import { popupImg } from "@/assets/assets";
+import Image from "next/image";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { IoClose } from "react-icons/io5";
 
 const PopupForm = () => {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    contact: "",
+    mobile: "",
     dob: "",
     country: "",
     message: "",
   });
   const [errors, setErrors] = useState({});
   const popupRef = useRef(null);
-
-  const countries = [
-    "United States",
-    "United Kingdom",
-    "Canada",
-    "Australia",
-    "Germany",
-    "France",
-    "Japan",
-    "Other",
-  ];
+  const countries = Home_Data.countryItems;
 
   useEffect(() => {
     if (showForm) {
@@ -89,6 +87,23 @@ const PopupForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // Handle phone input separately as it doesn't use the standard event object
+    if (name === undefined) {
+      setFormData((prev) => ({
+        ...prev,
+        mobile: value,
+      }));
+
+      // Clear mobile error if any
+      if (errors.mobile) {
+        setErrors((prev) => ({
+          ...prev,
+          mobile: "",
+        }));
+      }
+      return;
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -102,42 +117,15 @@ const PopupForm = () => {
     }
   };
 
-  const validateForm = () => {
-    const newErrors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex =
-      /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,3}[-\s.]?[0-9]{3,6}$/;
-
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
-    }
-    if (!formData.contact.trim()) {
-      newErrors.contact = "Contact number is required";
-    } else if (!phoneRegex.test(formData.contact)) {
-      newErrors.contact = "Please enter a valid phone number";
-    }
-    if (!formData.dob) newErrors.dob = "Date of birth is required";
-    if (!formData.country) newErrors.country = "Please select a country";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      // Here you would typically send the data to your backend
+    if (validateInquiryForm(formData, setErrors)) {
       console.log("Form submitted:", formData);
       handleClose();
-      // Reset form after submission
       setFormData({
         name: "",
         email: "",
-        contact: "",
+        mobile: "",
         dob: "",
         country: "",
         message: "",
@@ -154,165 +142,156 @@ const PopupForm = () => {
     >
       <div
         ref={popupRef}
-        className="bg-white p-6 rounded-xl w-full max-w-md max-h-[90vh] overflow-y-auto shadow-lg relative"
+        className="bg-background rounded-xl md:min-w-3xl flex overflow-y-auto shadow-lg max-w-4xl w-full items-center"
       >
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl transition-colors"
-          aria-label="Close form"
+        <div className="w-[50%] hidden md:block">
+          <Image
+            src={popupImg}
+            alt="popupImg"
+            width={200}
+            height={200}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="p-6 flex flex-col md:w-[50%] w-full overflow-y-auto gap-4"
         >
-          &times;
-        </button>
+          <div className="bg-primary p-2 absolute top-2 right-2 rounded-full text-background hover:scale-105 cursor-pointer">
+            <IoClose onClick={handleClose} className=" " />
+          </div>
+          <h2 className="text-2xl font-bold text-secondary">Make an Inquiry</h2>
 
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">
-          Study Abroad Inquiry
-        </h2>
+          {/* Name & Email - Flex Row */}
+          <div className="flex md:flex-row flex-col gap-4">
+            <div className="flex-1">
+              <label className="block text-sm font-medium text-text">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your full name"
+                className={`w-full border ${
+                  errors.name ? "border-danger" : "border-border"
+                } rounded-lg px-4 py-2 h-10 focus:ring-2 focus:ring-primary`}
+              />
+              {errors.name && (
+                <p className="mt-1 text-sm text-danger">{errors.name}</p>
+              )}
+            </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Full Name *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your full name"
-              className={`w-full border ${
-                errors.name ? "border-red-500" : "border-gray-300"
-              } rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
-            />
-            {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-            )}
+            <div className="flex-1">
+              <label className="block text-sm font-medium text-text">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your.email@example.com"
+                className={`w-full border ${
+                  errors.email ? "border-danger" : "border-border"
+                } rounded-lg px-4 py-2 h-10 focus:ring-2 focus:ring-primary`}
+              />
+              {errors.email && (
+                <p className="mt-1 text-sm text-danger">{errors.email}</p>
+              )}
+            </div>
           </div>
 
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="your.email@example.com"
-              className={`w-full border ${
-                errors.email ? "border-red-500" : "border-gray-300"
-              } rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
-            />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-            )}
+          <div className="flex md:flex-row flex-col gap-4">
+            <div className="md:w-48">
+              <label className="block text-sm font-medium text-text">
+                Contact Number *
+              </label>
+              <PhoneInput
+                international
+                defaultCountry="IN"
+                value={formData.mobile}
+                onChange={(value) =>
+                  handleChange({ target: { name: "mobile", value } })
+                }
+                className={`w-full border ${
+                  errors.mobile ? "border-danger" : "border-border"
+                } rounded-lg px-4 py-2 h-10 focus:ring-2 focus:ring-primary`}
+              />
+              {errors.mobile && (
+                <p className="mt-1 text-sm text-danger">{errors.mobile}</p>
+              )}
+            </div>
+            {/* DOB (now full-width) */}
+            <div className="w-48 ">
+              <label className="block text-sm font-medium text-text">
+                Date of Birth *
+              </label>
+              <DatePicker
+                selected={formData.dob ? new Date(formData.dob) : null}
+                onChange={(date) =>
+                  handleChange({ target: { name: "dob", value: date } })
+                }
+                placeholderText="dd-mm-yyyy"
+                dateFormat="dd-MM-yyyy"
+                maxDate={new Date()}
+                className={`max-md:w-[300px] w-full border ${
+                  errors.dob ? "border-danger" : "border-border"
+                } rounded-lg px-4 py-2 h-10 focus:ring-2 focus:ring-primary`}
+              />
+              {errors.dob && (
+                <p className="mt-1 text-sm text-danger">{errors.dob}</p>
+              )}
+            </div>
           </div>
 
+          {/* Country Dropdown */}
           <div>
-            <label
-              htmlFor="contact"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Contact Number *
-            </label>
-            <input
-              type="tel"
-              id="contact"
-              name="contact"
-              value={formData.contact}
-              onChange={handleChange}
-              placeholder="+1 234 567 8900"
-              className={`w-full border ${
-                errors.contact ? "border-red-500" : "border-gray-300"
-              } rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
-            />
-            {errors.contact && (
-              <p className="mt-1 text-sm text-red-600">{errors.contact}</p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="dob"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Date of Birth *
-            </label>
-            <input
-              type="date"
-              id="dob"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              max={new Date().toISOString().split("T")[0]}
-              className={`w-full border ${
-                errors.dob ? "border-red-500" : "border-gray-300"
-              } rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
-            />
-            {errors.dob && (
-              <p className="mt-1 text-sm text-red-600">{errors.dob}</p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="country"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
+            <label className="block text-sm font-medium text-text">
               Preferred Country *
             </label>
             <select
-              id="country"
               name="country"
               value={formData.country}
               onChange={handleChange}
               className={`w-full border ${
-                errors.country ? "border-red-500" : "border-gray-300"
-              } rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
+                errors.country ? "border-danger" : "border-border"
+              } rounded-lg px-4 py-2 h-10 focus:ring-2 focus:ring-primary`}
             >
               <option value="">Select a country</option>
               {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
+                <option key={country.id} value={country.label}>
+                  {country.label}
                 </option>
               ))}
             </select>
             {errors.country && (
-              <p className="mt-1 text-sm text-red-600">{errors.country}</p>
+              <p className="mt-1 text-sm text-danger">{errors.country}</p>
             )}
           </div>
 
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
+          {/* Message Textarea */}
+          <div className="mt-2">
+            <label className="block text-sm font-medium text-text">
               Your Message *
             </label>
             <textarea
-              id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us about your study goals..."
               rows={4}
               className={`w-full border ${
-                errors.message ? "border-red-500" : "border-gray-300"
-              } rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
+                errors.message ? "border-danger" : "border-border"
+              } rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary`}
             />
             {errors.message && (
-              <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+              <p className="mt-1 text-sm text-danger">{errors.message}</p>
             )}
           </div>
 
-          <Button type="submit" className="w-full mt-6 py-3">
+          <Button type="submit" className="md:w-full">
             Submit Inquiry
           </Button>
         </form>

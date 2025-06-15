@@ -216,7 +216,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:flex-row md:items-center md:space-x-6 font-bold">
+        <div className="hidden md:flex md:flex-row md:items-center md:space-x-6 font-medium">
           <div className="flex flex-col md:flex-row gap-4 md:gap-14 text-text font-500">
             <Link
               href={HOME_ROUTE}

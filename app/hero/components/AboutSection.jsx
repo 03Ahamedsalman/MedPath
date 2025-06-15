@@ -9,18 +9,29 @@ import {
   about_3,
   about_4,
   choose_shape,
+  h2_about_shape01,
 } from "@/assets/assets";
 import { Home_Data } from "@/const/Data";
 import { ABOUT_ROUTE } from "@/utils/routes";
+import CountUp from "react-countup";
+import { UseIntersection } from "@/components/common/useIntersection";
 
 const AboutSection = () => {
   const aboutContents = Home_Data.about_section;
   const lists = aboutContents.lists;
+  const { ref, isIntersecting } = UseIntersection({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
-    <div className="max md:px-32 px-4 relative">
+    <div className="max md:px-32 px-4 relative overflow-hidden" ref={ref}>
       <div className="my-24 md:flex gap-16">
         <div className="absolute -left-10 bottom-0 opacity-30 w-full">
           <Image src={choose_shape} alt="about-section-background" />
+        </div>
+        <div className="absolute left-10 bottom-[40%] opacity-30 w-full smooth-animated-element">
+          <Image src={h2_about_shape01} alt="animate-image" />
         </div>
         {/* image  */}
         <div className="md:w-[50%] relative flex justify-center">
@@ -39,7 +50,10 @@ const AboutSection = () => {
           <div className="absolute right-0 rounded-xl overflow-hidden">
             <Image src={about_3} alt="about_3" className="rounded-xl" />
             <div className="absolute top-0 left-0 w-full h-full bg-black/40 flex flex-col items-center justify-center rounded-xl gap-4">
-              <span className="text-5xl text-primary">4k+</span>
+              <span className="text-5xl text-primary">
+                {isIntersecting && <CountUp end={4} duration={5} />}
+                k+
+              </span>
               <p className="text-white text-center text-sm font-semibold px-4 uppercase">
                 Students enrolled in study doctor
               </p>
@@ -52,7 +66,10 @@ const AboutSection = () => {
           <div>
             <span className="text-primary">{aboutContents.span}</span>
             <h2 className="md:text-h2 text-3xl font-semibold">
-              {aboutContents.title}
+              {aboutContents.title.slice(0, 11)}
+              <span className="text-secondary">
+                {aboutContents.title.slice(11, 18)}
+              </span>
             </h2>
           </div>
           <p className="indent-10">{aboutContents.description_one}</p>
@@ -77,7 +94,9 @@ const AboutSection = () => {
               ))}
             </div>
           </div>
-          <Button href={ABOUT_ROUTE} className="w-full">About More</Button>
+          <Button href={ABOUT_ROUTE} className="w-full">
+            About More
+          </Button>
         </div>
       </div>
     </div>

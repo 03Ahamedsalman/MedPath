@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,19 +6,18 @@
     --color-secondary: #004B87;
     --color-text: #2C3E50;
     --color-border: #E5E7EB;
+    --color-danger: #FF5252;
     --font-weight-600: 600;
     --text-h2: 42px;
+    --text-very-small: 12px;
 }
 
 * {
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
-.body-no-scroll {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+.scroll-hidden::-webkit-scrollbar {
+    display: none;
 }
 
 .center {
@@ -66,4 +64,26 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #00A7A3;
+}
+
+/* animations.css */
+@keyframes smoothTopBottom {
+
+    0%,
+    100% {
+        transform: translateY(-10%);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: translateY(10%);
+        animation-timing-function: ease-in;
+    }
+}
+
+.smooth-animated-element {
+    display: inline-block;
+    /* Required for span elements */
+    animation: smoothTopBottom 3s infinite;
+    will-change: transform;
 }

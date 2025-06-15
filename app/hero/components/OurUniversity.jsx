@@ -1,20 +1,37 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Home_Data } from "@/const/Data";
 import UniversityCard from "../ui/UniversityCard";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 import UniversitSumbitForm from "@/components/forms/UniversitSumbitForm";
-import { useState } from "react";
 
 const OurUniversity = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedUniversity, setSelectedUniversity] = useState(null);
+  const [images, setImages] = useState([]);
+  const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section className="px-4 xs:px-6 sm:px-8 py-8 sm:py-12 md:py-16 min-h-[500px] flex items-center justify-center">
+        <div className="animate-pulse">Loading universities...</div>
+      </section>
+    );
+  }
+
   const title = Home_Data.our_universities.title;
   const university_slide = Home_Data.our_universities.universities;
-
-  const [selectedUniversity, setSelectedUniversity] = useState(null);
-  const [showForm, setShowForm] = useState(false);
 
   const handleApplyClick = (universityName) => {
     setSelectedUniversity(universityName);
@@ -34,16 +51,16 @@ const OurUniversity = () => {
         </h2>
         <div className="relative">
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]} // Added Autoplay here
             spaceBetween={16}
-            slidesPerView={1}
             navigation={{
               nextEl: ".custom-next",
               prevEl: ".custom-prev",
             }}
             autoplay={{
-              delay: 3000,
+              delay: 2000,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true, // Optional: pause on hover
             }}
             loop={true}
             breakpoints={{
@@ -83,6 +100,7 @@ const OurUniversity = () => {
         {showForm && (
           <UniversitSumbitForm
             university={selectedUniversity}
+            image={images.find((image) => image.name === selectedUniversity)}
             onClose={closeForm}
           />
         )}

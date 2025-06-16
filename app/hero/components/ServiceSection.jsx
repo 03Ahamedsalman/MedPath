@@ -73,7 +73,7 @@ const ServiceSection = () => {
   }, []); // Empty dependency array means this runs once on mount
 
   return (
-    <div className="max">
+    <section className="max">
       <div className="mx-auto py-16 flex flex-col items-center gap-5">
         <h2 className="text-4xl text-secondary font-bold uppercase">
           {serviceData.title}
@@ -110,7 +110,7 @@ const ServiceSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

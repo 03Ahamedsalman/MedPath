@@ -6,6 +6,8 @@ import AbouSecttion from "./hero/components/AboutSection";
 import Testimonials from "./hero/components/Testimonials";
 import FreeConsult from "./hero/components/FreeConsult";
 import ServiceSection from "./hero/components/ServiceSection";
+import WhyChooseSection from "./hero/components/WhyChooseSection";
+import AreYouReadySection from "./hero/components/AreYouReadySection";
 
 export const metadata = getMeta(seoData.home);
 const Home = () => {
@@ -17,6 +19,8 @@ const Home = () => {
       <Testimonials />
       <FreeConsult />
       <ServiceSection />
+      <WhyChooseSection />
+      <AreYouReadySection />
     </div>
   );
 };

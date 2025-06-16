@@ -25,7 +25,7 @@ const AboutSection = () => {
   });
 
   return (
-    <div className="max md:px-32 px-4 relative overflow-hidden" ref={ref}>
+    <section className="max md:px-32 px-4 relative overflow-hidden" ref={ref}>
       <div className="my-24 md:flex gap-16">
         <div className="absolute -left-10 bottom-0 opacity-30 w-full">
           <Image src={choose_shape} alt="about-section-background" />
@@ -99,7 +99,7 @@ const AboutSection = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

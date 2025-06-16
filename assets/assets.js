@@ -10,7 +10,12 @@ import backgroundImage2 from "./team_bg.jpg";
 import popupImg from "./popup-img.jpg";
 import mailIcon from "./mailIcon.webp";
 import ctabg from "./cta-bg1.webp";
+import student_group from "./student-group.webp";
 import h2_about_shape03 from "./h2_about_shape03.png";
+import consultImage from "./consultImage.png";
+import whyus from "./why us.png";
+import areyouready from "./areyouready.webp";
+import mbbsAbroadStudents from "./mbbsAbroadStudents.webp";
 
 // Universite Image
 import AL from "./universities/Al-Farabi Kazakh National University.webp";
@@ -46,6 +51,11 @@ export {
   mailIcon,
   h2_about_shape03,
   ctabg,
+  consultImage,
+  student_group,
+  whyus,
+  areyouready,
+  mbbsAbroadStudents,
 
   // Universite Image
   AL,

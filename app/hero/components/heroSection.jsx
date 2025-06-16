@@ -115,7 +115,7 @@ const HeroSection = () => {
               {activeIndex === 0 ? (
                 <>
                   WELCOME TO{" "}
-                  <span className="text-primary">MEDPATH OVERSEAS PVT</span>
+                  <span className="text-primary">MEDPATH OVERSEAS PVT LTD</span>
                 </>
               ) : activeIndex === 1 ? (
                 <>

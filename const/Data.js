@@ -202,6 +202,16 @@ export const Home_Data = {
       },
     ],
   },
+  consult_section: {
+    title: "Consult With Our Expert",
+    description:
+      "Personalized guidance for your medical journey. Choose Study Doctor now",
+    youtube_id: "NBDLr7I8eZM",
+    button: {
+      label: "GET STARTED",
+      link: "/consult",
+    },
+  },
   our_services: {
     title: "Our Services",
     services: [
@@ -237,9 +247,70 @@ export const Home_Data = {
       },
     ],
   },
+  why_us: {
+    span: "WHY CHOOSE US",
+    title:
+      "Unlock Your Medical Dreams Abroad: Study Doctor, Your Trusted Companion.",
+    description:
+      "Discover your path to a medical career with Study Doctor. Benefit from expert guidance, a global network of top-tier universities, and comprehensive services tailored to your needs. Let us simplify your journey to studying MBBS abroad, ensuring a seamless transition and a rewarding educational experience.",
+    button: {
+      label: "Learn More",
+      link: { ABOUT_ROUTE },
+    },
+    approved_by: [
+      {
+        title: "NMC Aproved",
+        description:
+          "Study Doctor: NMC Approved Education Consultant for Pursuing MBBS Abroad.",
+        image: "https://example.com/images/nmc.jpg",
+      },
+      {
+        title: "FMGE",
+        description:
+          "Unlock Your Global Medical Career: FMGE Preparation with Study Doctor.",
+        image: "https://example.com/images/who.jpg",
+      },
+      {
+        title: "Expert Guidance",
+        description:
+          "Navigate your medical education with seasoned professionals by your side.",
+        image: "https://example.com/images/ministry.jpg",
+      },
+      {
+        title: "Global Network",
+        description:
+          "Access top-notch medical universities worldwide through our extensive connections.",
+        image: "https://example.com/images/ministry.jpg",
+      },
+      {
+        title: "UNESCO Aproved",
+        description:
+          "Empowering Dreams: Study Doctor - Your Gateway to International Medical Education.",
+        image: "https://example.com/images/ministry.jpg",
+      },
+      {
+        title: "Carrer Counselling",
+        description:
+          "Unlock Your Medical Career: Study MBBS Abroad with Study Doctor!.",
+        image: "https://example.com/images/ministry.jpg",
+      },
+      {
+        title: "Comprehensive Services",
+        description:
+          "Enjoy seamless support from application to post-arrival, simplifying your journey.",
+        image: "https://example.com/images/ministry.jpg",
+      },
+      {
+        title: "Cultural Integration",
+        description:
+          "Embrace a smooth transition with our assistance in adapting abroad.",
+        image: "https://example.com/images/ministry.jpg",
+      },
+    ],
+  },
   popular_countries: [
     {
-      name: "Russia",
+      title: "Russia",
       description:
         "Study MBBS in Russia at top universities with affordable tuition fees and high-quality education.",
       image: "https://example.com/images/russia.jpg",
@@ -269,6 +340,15 @@ export const Home_Data = {
       },
     },
   ],
+  Are_You_Ready: {
+    title: "Are You Ready to Study MBBS Abroad?",
+    description:
+      "We're here to help you unlock your medical dreams abroad. Let's start by learning more about studying MBBS abroad, exploring popular countries, and understanding the benefits of our services.",
+    button: {
+      label: "Learn More",
+      link: { ABOUT_ROUTE },
+    },
+  },
 
   free_demo_section: {
     title: "Book a Free Demo Session",
@@ -355,33 +435,7 @@ export const Home_Data = {
       },
     ],
   },
-  //   why_us: {
-  //     span: "WHY CHOOSE US",
-  //     title:
-  //       "Unlock Your Medical Dreams Abroad: Study Doctor, Your Trusted Companion.",
-  //     description:
-  //       "Discover your path to a medical career with Study Doctor. Benefit from expert guidance, a global network of top-tier universities, and comprehensive services tailored to your needs. Let us simplify your journey to studying MBBS abroad, ensuring a seamless transition and a rewarding educational experience.",
-  //     approved_by: [
-  //       {
-  //         name: "National Medical Commission (NMC)",
-  //         description:
-  //           "Recognized by the NMC, ensuring compliance with Indian medical education standards.",
-  //         image: "https://example.com/images/nmc.jpg",
-  //       },
-  //       {
-  //         name: "World Health Organization (WHO)",
-  //         description:
-  //           "Affiliated with WHO, guaranteeing global recognition of your medical degree.",
-  //         image: "https://example.com/images/who.jpg",
-  //       },
-  //       {
-  //         name: "Ministry of Education",
-  //         description:
-  //           "Approved by the Ministry of Education, ensuring quality education and support.",
-  //         image: "https://example.com/images/ministry.jpg",
-  //       },
-  //     ],
-  //   },
+
   testimonials: {
     title: "Student Testimonial",
     entries: [

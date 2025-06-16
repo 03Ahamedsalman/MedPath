@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export const Dropdown = ({
@@ -35,30 +34,6 @@ export const Dropdown = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [open, controlledOpen, isMobile]);
-
-  useEffect(() => {
-    const isOpen = isMobile ? controlledOpen : open;
-    if (isOpen) {
-      gsap.set(dropdownRef.current, { display: "block" });
-      gsap.fromTo(
-        itemsRef.current,
-        { x: -20, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          stagger: 0.08,
-          duration: 0.1,
-          ease: "power3.out",
-        }
-      );
-    } else {
-      gsap.to(itemsRef.current, {
-        x: -20,
-        opacity: 0,
-      });
-      gsap.set(dropdownRef.current, { display: "none" });
-    }
   }, [open, controlledOpen, isMobile]);
 
   const closeDropdown = () => {
@@ -100,31 +75,17 @@ export const Dropdown = ({
 
       <div
         ref={dropdownRef}
-        className="absolute z-50 bg-white shadow-xl rounded-lg w-72 p-2 space-y-1 -ml-4"
-        style={{
-          display: (isMobile ? controlledOpen : open) ? "block" : "none",
-        }}
+        className={`absolute z-50 bg-white shadow-xl rounded-lg w-72 p-2 space-y-1 -ml-4 transition-all duration-300 ${
+          (isMobile ? controlledOpen : open)
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-2 pointer-events-none"
+        }`}
       >
         {items.map((item, idx) => (
           <Link
             key={idx}
             href={item.href}
-            ref={(el) => (itemsRef.current[idx] = el)}
-            onMouseEnter={() =>
-              gsap.to(itemsRef.current[idx], {
-                scale: 1.03,
-                duration: 0.2,
-                ease: "power2.out",
-              })
-            }
-            onMouseLeave={() =>
-              gsap.to(itemsRef.current[idx], {
-                scale: 1,
-                duration: 0.2,
-                ease: "power2.inOut",
-              })
-            }
-            className="dropdown-item flex items-center justify-between px-3 py-2 text-sm text-gray-700 rounded-md transition-all duration-300 ease-in-out hover:bg-blue-50 hover:text-blue-700"
+            className="dropdown-item flex items-center justify-between px-3 py-2 text-sm text-gray-700 rounded-md transition-all duration-200 ease-in-out hover:bg-blue-50 hover:text-blue-700 hover:scale-[1.03]"
             onClick={closeDropdown}
           >
             <span>

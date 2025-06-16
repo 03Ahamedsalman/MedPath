@@ -1,5 +1,3 @@
-// hooks/useIntersection.ts
-
 import { useInView } from "react-intersection-observer";
 
 export const UseIntersection = (options) => {

@@ -308,38 +308,7 @@ export const Home_Data = {
       },
     ],
   },
-  popular_countries: [
-    {
-      title: "Russia",
-      description:
-        "Study MBBS in Russia at top universities with affordable tuition fees and high-quality education.",
-      image: "https://example.com/images/russia.jpg",
-      button: {
-        button_text: "Explore Russia",
-        button_link: ABOUT_ROUTE,
-      },
-    },
-    {
-      name: "Ukraine",
-      description:
-        "Pursue your medical degree in Ukraine, known for its excellent medical programs and international recognition.",
-      image: "https://example.com/images/ukraine.jpg",
-      button: {
-        button_text: "Explore Ukraine",
-        button_link: ABOUT_ROUTE,
-      },
-    },
-    {
-      name: "Kazakhstan",
-      description:
-        "Experience world-class medical education in Kazakhstan with a focus on practical training and research.",
-      image: "https://example.com/images/kazakhstan.jpg",
-      button: {
-        button_text: "Explore Kazakhstan",
-        button_link: ABOUT_ROUTE,
-      },
-    },
-  ],
+
   Are_You_Ready: {
     title: "Are You Ready to Study MBBS Abroad?",
     description:
@@ -350,90 +319,9 @@ export const Home_Data = {
     },
   },
 
-  free_demo_section: {
-    title: "Book a Free Demo Session",
-    description:
-      "Join our free demo session to learn more about studying MBBS abroad. Our experts will guide you through the process, answer your questions, and help you understand the opportunities available.",
-    image: "https://example.com/images/demo.jpg",
-    button: {
-      button_text: "Book Now",
-      button_link: ABOUT_ROUTE,
-    },
-  },
-  elgibility: [
-    {
-      title: "Eligibility Criteria for MBBS Programs Abroad",
-      description:
-        "At MBBS Consultancy, we help students meet all the necessary qualifications to pursue their dream of studying MBBS in top international medical universities. Here are the key eligibility requirements for Indian students:",
-      criteria: [
-        [
-          "1. Academic Qualifications",
-          "To apply for an MBBS program abroad, students must have completed their 12th grade with Physics, Chemistry, and Biology (PCB) as core subjects. A minimum of 50% marks in PCB is generally required. Some universities may have higher cutoffs, so we guide you based on the specific university criteria.",
-        ],
-        [
-          "2. NEET Qualification",
-          "Indian students must have a valid NEET score to be eligible for MBBS admission abroad. This is a mandatory requirement by the National Medical Commission (NMC) to pursue MBBS outside India.",
-        ],
-        [
-          "3. Age Requirement",
-          "Applicants must be at least 17 years of age at the time of admission. Some countries may also have an upper age limit of 25 years, so it’s important to verify age-related eligibility based on your preferred destination.",
-        ],
-        [
-          "4. English Language Proficiency",
-          "Most of our partner universities offer MBBS programs in English and do not require IELTS or TOEFL scores. If your previous education was in English, you’re generally exempt from any language proficiency test. We ensure that you only take what’s necessary, avoiding unnecessary exams.",
-        ],
-        [
-          "5. Passport and Visa Requirements",
-          "To pursue MBBS abroad, having a valid passport is essential. You must also fulfill the visa requirements of the country where you plan to study. This usually includes providing documents like your university admission letter, proof of financial stability, and health insurance. The visa process varies by country, but at MBBS Consultancy, we guide you every step of the way to ensure a smooth and successful application.",
-        ],
-        [
-          "6. Health and Medical Fitness",
-          "Some countries require a medical fitness certificate or a health check-up before issuing a student visa or confirming university admission. This may include basic medical tests and proof of necessary vaccinations. As your trusted MBBS consultants, we assist you in meeting all health and fitness requirements to avoid last-minute issues.",
-        ],
-        [
-          "By fulfilling these final criteria, you’ll be fully prepared to begin your MBBS journey in one of the world’s top NMC and WHO-approved medical universities. MBBS Consultancy is here to make the process easy, efficient, and worry-free!",
-        ],
-      ],
-    },
-  ],
-  accompalishments: {
-    span: "Are You Ready to Pursue Your MBBS Abroad?",
-    title: "Our Accomplishments",
-    description:
-      "Get Free MBBS Consultation For Featured. Top Universities in Abroad",
-    description_two:
-      "Get Unlimited Access to 2,000+ of Top Universities for your MBBS Career across All Countries. Contact us now",
-    button_one: {
-      button_text_one: "Get Started",
-      button_link_one: ABOUT_ROUTE,
-    },
-    button_two: {
-      button_text_two: "Contact Us",
-      button_link_two: CONTACT_ROUTE,
-    },
-
-    achievements: [
-      {
-        title: "3.9k+",
-        description: "Successfully Graduated",
-        image: "https://example.com/images/admissions.jpg",
-      },
-      {
-        title: "15.8k+",
-        description: "Applications Completed",
-        image: "https://example.com/images/guidance.jpg",
-      },
-      {
-        title: "97.5+",
-        description: "Satisfaction Rate",
-        image: "https://example.com/images/network.jpg",
-      },
-      {
-        title: "100.2k+",
-        description: "Students Community",
-        image: "https://example.com/images/network.jpg",
-      },
-    ],
+  trusted_logo: {
+    image: "https://example.com/images/trusted_logo.jpg",
+    alt: "Trusted Logo",
   },
 
   testimonials: {
@@ -490,89 +378,6 @@ export const Home_Data = {
     { id: 4, label: "MBBS IN Vietnam", href: "/countries/vietnam" },
     { id: 5, label: "MBBS IN Uzbekistan", href: "/countries/uzbekistan" },
   ],
-  // our_universities: {
-  //   title: "Top Universities to Study Abroad",
-  //   russia: [
-  //     {
-  //       name: "Kazakh National Medical University",
-  //       description:
-  //         "One of the leading medical universities in Kazakhstan, known for its high academic standards and research opportunities.",
-  //       image: {
-  //         src: "https://example.com/images/kazakh_university.jpg",
-  //         alt: "Kazakh National Medical University",
-  //       },
-  //     },
-  //     {
-  //       name: "Tashkent Medical Academy",
-  //       description:
-  //         "A prestigious institution in Uzbekistan offering a wide range of medical programs with international recognition.",
-  //       image: {
-  //         src: "https://example.com/images/tashkent_university.jpg",
-  //         alt: "Tashkent Medical Academy",
-  //       },
-  //     },
-  //   ],
-  //   ukraine: [
-  //     {
-  //       name: "Kharkiv National Medical University",
-  //       description:
-  //         "A top-ranked medical university in Ukraine, known for its comprehensive medical programs and research facilities.",
-  //       image: {
-  //         src: "https://example.com/images/tashkent_university.jpg",
-  //         alt: "Tashkent Medical Academy",
-  //       },
-  //     },
-  //     {
-  //       name: "Lviv National Medical University",
-  //       description:
-  //         "Renowned for its quality education and international collaborations, Lviv National Medical University offers a vibrant learning environment.",
-  //       image: {
-  //         src: "https://example.com/images/tashkent_university.jpg",
-  //         alt: "Tashkent Medical Academy",
-  //       },
-  //     },
-  //   ],
-  //   kazakhstan: [
-  //     {
-  //       name: "Al-Farabi Kazakh National University",
-  //       description:
-  //         "One of the largest and most prestigious universities in Kazakhstan, offering a wide range of medical programs.",
-  //       image: {
-  //         src: "https://example.com/images/tashkent_university.jpg",
-  //         alt: "Tashkent Medical Academy",
-  //       },
-  //     },
-  //     {
-  //       name: "Astana Medical University",
-  //       description:
-  //         "A leading medical institution in Kazakhstan, known for its innovative teaching methods and research initiatives.",
-  //       image: {
-  //         src: "https://example.com/images/tashkent_university.jpg",
-  //         alt: "Tashkent Medical Academy",
-  //       },
-  //     },
-  //   ],
-  //   india: [
-  //     {
-  //       name: "All India Institute of Medical Sciences (AIIMS)",
-  //       description:
-  //         "AIIMS is one of the most prestigious medical institutions in India, known for its excellence in medical education and research.",
-  //       image: {
-  //         src: "https://example.com/images/tashkent_university.jpg",
-  //         alt: "Tashkent Medical Academy",
-  //       },
-  //     },
-  //     {
-  //       name: "Postgraduate Institute of Medical Education and Research (PGIMER)",
-  //       description:
-  //         "PGIMER is a leading medical and research institution in India, offering advanced medical education and training.",
-  //       image: {
-  //         src: "https://example.com/images/tashkent_university.jpg",
-  //         alt: "Tashkent Medical Academy",
-  //       },
-  //     },
-  //   ],
-  // },
 };
 
 export const daySchedules = {

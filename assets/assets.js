@@ -31,6 +31,16 @@ import samarkand from "./universities/SAMARKAND STATE MEDICAL INSTITUTE.webp";
 import SOUTHKAZAKHSTATEMEDICALUNIVERSITY from "./universities/SOUTH KAZAKHSTAN MEDICAL ACADEMY.webp";
 import tashkent from "./universities/Tashkent medical University.webp";
 
+// Universitieslogo
+import ALLogo from "./university_log/Al-Farabi_University_-_logo_-_01.jpg";
+import Andijan from "./university_log/Andijan-State-Medical-Institute.webp";
+import astanaLogo from "./university_log/Astana medical University.png";
+import bashkirlogo from "./university_log/Bashkir state medical University.png";
+import BukharaLogo from "./university_log/BUKHARA.jpg";
+import CanthoLogo from "./university_log/Can Tho University.png";
+import InternationalLogo from "./university_log/International School of Medicine.png";
+import TashkentLogo from "./university_log/Tashkent.png";
+
 // about section
 import about_1 from "./aboutus/about_1.webp";
 import about_2 from "./aboutus/about_2.webp";

@@ -7,15 +7,19 @@ import choose_shape from "./choose_shape.webp";
 import h2_about_shape01 from "./h2_about_shape01.png";
 import backgroundImage1 from "./h2_about_shape03.png";
 import backgroundImage2 from "./team_bg.jpg";
+import studenttestimonials from "./studenttestimonials.jpg";
 import popupImg from "./popup-img.jpg";
 import mailIcon from "./mailIcon.webp";
 import ctabg from "./cta-bg1.webp";
 import student_group from "./student-group.webp";
 import h2_about_shape03 from "./h2_about_shape03.png";
+import blobImage from "./testimonial_shape01.png";
 import consultImage from "./consultImage.png";
 import whyus from "./why us.png";
+import star_image from "./star-image.png";
 import areyouready from "./areyouready.webp";
 import mbbsAbroadStudents from "./mbbsAbroadStudents.webp";
+import quote from "./quote.svg";
 
 // Universite Image
 import AL from "./universities/Al-Farabi Kazakh National University.webp";
@@ -66,6 +70,10 @@ export {
   whyus,
   areyouready,
   mbbsAbroadStudents,
+  quote,
+  studenttestimonials,
+  blobImage,
+  star_image,
 
   // Universite Image
   AL,
@@ -80,6 +88,15 @@ export {
   samarkand,
   SOUTHKAZAKHSTATEMEDICALUNIVERSITY,
   tashkent,
+  // Universitieslogo
+  ALLogo,
+  Andijan,
+  astanaLogo,
+  bashkirlogo,
+  BukharaLogo,
+  CanthoLogo,
+  InternationalLogo,
+  TashkentLogo,
 
   // about section
   about_1,

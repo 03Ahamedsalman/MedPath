@@ -1,15 +1,23 @@
 import {
   AL,
+  ALLogo,
+  Andijan,
+  astanaLogo,
   Banner_1,
   Banner_2,
   Bashkir,
+  bashkirlogo,
   bukhara,
+  BukharaLogo,
+  CanthoLogo,
   iner,
+  InternationalLogo,
   jalala,
   Kazahk,
   kazan,
   MiniBanner_1,
   MiniBanner_2,
+  TashkentLogo,
 } from "@/assets/assets";
 import { ABOUT_ROUTE, CONTACT_ROUTE } from "@/utils/routes";
 
@@ -319,54 +327,105 @@ export const Home_Data = {
     },
   },
 
-  trusted_logo: {
-    image: "https://example.com/images/trusted_logo.jpg",
-    alt: "Trusted Logo",
-  },
+  trusted_logo: [
+    {
+      id: 1,
+      image: ALLogo,
+      alt: "Al-Farabi_University_",
+    },
+    {
+      image: Andijan,
+      alt: "Andijan-State-Medical-Institute",
+      id: 2,
+    },
+    {
+      image: astanaLogo,
+      alt: "Astana medical University",
+      id: 3,
+    },
+    {
+      image: bashkirlogo,
+      alt: "Bashkir state medical University",
+      id: 4,
+    },
+    {
+      image: BukharaLogo,
+      alt: "BUKHARAlogo",
+      id: 5,
+    },
+    {
+      image: CanthoLogo,
+      alt: "Can Tho University logo",
+      id: 6,
+    },
+    {
+      image: InternationalLogo,
+      alt: "International School of Medicine logo",
+      id: 7,
+    },
+    {
+      image: TashkentLogo,
+      alt: "Tashkent logo",
+      id: 8,
+    },
+  ],
 
   testimonials: {
     title: "Student Testimonial",
+    description: "What Our Awesome Students Say",
     entries: [
       {
+        id: 1,
         name: "Aarav Sharma",
         feedback:
           "MBBS Consultancy guided me with every step of the admission process. Their support, advice, and prompt responses helped me fulfill my dream of studying abroad. I truly recommend them to any aspiring medical student looking for genuine help.",
         image: "https://example.com/images/testimonial1.jpg",
+        alt: "Aarav Sharma",
         starRating: 5,
       },
       {
+        id: 2,
         name: "Priya Verma",
         feedback:
           "The consultants at MBBS Consultancy were incredibly patient and knowledgeable. They explained everything clearly, assisted with documentation, and offered motivation throughout the journey. I felt supported at every step, and I’m now pursuing my MBBS in Georgia successfully.",
         image: "https://example.com/images/testimonial2.jpg",
+        alt: "Priya Verma",
         starRating: 5,
       },
       {
+        id: 3,
         name: "Rahul Mehta",
         feedback:
           "I got admitted to a top medical university in Russia with their help. MBBS Consultancy’s transparent process, quick communication, and honest guidance made everything stress-free. I am very thankful to them for making my study-abroad dream happen.",
         image: "https://example.com/images/testimonial3.jpg",
+        alt: "Rahul Mehta",
         starRating: 4,
       },
       {
+        id: 4,
         name: "Sneha Kapoor",
         feedback:
           "MBBS Consultancy was always available to answer my questions and offer advice. They ensured I chose the right country and university. The entire process felt simple because of their clarity and professionalism. Truly grateful for their exceptional service and care.",
         image: "https://example.com/images/testimonial4.jpg",
+        alt: "Sneha Kapoor",
         starRating: 4,
       },
       {
+        id: 5,
         name: "Karan Singh",
         feedback:
           "I’m really happy I chose MBBS Consultancy. Their team helped me complete all documentation and applications smoothly. I had no idea where to start, but their support helped me secure admission into a great university in Kazakhstan without stress.",
         image: "https://example.com/images/testimonial5.jpg",
+        alt: "Karan Singh",
         starRating: 5,
       },
       {
+        id: 6,
         name: "Meera Iyer",
         feedback:
           "With MBBS Consultancy, my application process became effortless. They clearly explained procedures, offered helpful tips, and checked on my progress. Their service is reliable and student-focused. I'm now studying MBBS in Uzbekistan with confidence and peace of mind.",
         image: "https://example.com/images/testimonial6.jpg",
+        alt: "Meera Iyer",
         starRating: 4,
       },
     ],

@@ -17,7 +17,6 @@ const OurUniversity = () => {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    // Simulate loading delay
     const timer = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timer);
   }, []);

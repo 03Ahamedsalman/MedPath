@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
 
 export default function TestimonialCard({
   name,
@@ -33,15 +34,17 @@ export default function TestimonialCard({
           className="float-right"
         />
       </div>
-      {[...Array(5)].map((_, i) => (
-        <span
-          key={i}
-          className={i < rating ? "text-yellow-400" : "text-gray-300"}
-        >
-          ★
-        </span>
-      ))}
-      <p className="text-sm">{review}</p>
+      <div className="flex">
+        {[...Array(5)].map((_, i) => (
+          <span
+            key={i}
+            className={i < rating ? "text-yellow-400" : "text-gray-300"}
+          >
+            <FaStar />
+          </span>
+        ))}
+      </div>
+      <p className="text-sm mt-2">{review}</p>
     </div>
   );
 }

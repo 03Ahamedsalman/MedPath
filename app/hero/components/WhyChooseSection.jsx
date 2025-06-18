@@ -36,7 +36,7 @@ const WhyChooseSection = () => {
           <span className="text-sm text-secondary font-semibold">
             {choose_Content.span}
           </span>
-          <h2 className="text-3xl font-bold">
+          <h2 className="md:text-4xl text-3xl font-bold">
             Unlock Your{" "}
             <span className="text-primary">Medical Dreams Abroad:</span> Study
             Doctor, Your Trusted Companion.

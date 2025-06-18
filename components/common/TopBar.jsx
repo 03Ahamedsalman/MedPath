@@ -1,28 +1,36 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { FaRegClock } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
 import { daySchedules, socialmediaLinks } from "@/const/Data";
+import { useEffect, useState } from "react";
 
 // Define schedule for each day
 
-function getTodaySchedule() {
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const today = new Date().getDay();
-  const dayName = days[today];
-  return `${dayName}: ${daySchedules[dayName]}`;
-}
-
 const TopBar = () => {
+  const [todaySchedule, setTodaySchedule] = useState("");
+
+  useEffect(() => {
+    const getTodaySchedule = () => {
+      const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      const today = new Date().getDay();
+      const dayName = days[today];
+      return `${dayName}: ${daySchedules[dayName]}`;
+    };
+
+    setTodaySchedule(getTodaySchedule());
+  }, []);
+
   return (
     <div className="text-background bg-primary text-sm px-20 py-2 flex flex-wrap justify-between items-center ">
       <div className="md:flex hidden flex-wrap items-center gap-4 md:gap-6">
@@ -41,7 +49,7 @@ const TopBar = () => {
           <MdOutlineEmail /> omedpath@gmail.com
         </a>
         <span className="flex items-center gap-1 whitespace-nowrap">
-          <FaRegClock /> {getTodaySchedule()}
+          <FaRegClock /> {todaySchedule}
         </span>
       </div>
       <div className="flex items-center md:gap-2 gap-6 max-md:justify-center max-md:w-full">

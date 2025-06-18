@@ -20,6 +20,7 @@ const Button = ({
     bg-transparent 
     z-[1]
     text-[inherit]
+    cursor-pointer
     group ${className}
   `;
 

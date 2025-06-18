@@ -7,6 +7,7 @@ import "swiper/css/autoplay";
 import TestimonialCard from "@/app/hero/ui/TestimonialsCards";
 import { Home_Data } from "@/const/Data";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
   const testimonials = Home_Data.google_testimonials_section.testimonials;
@@ -17,7 +18,11 @@ const Testimonials = () => {
         <h2 className="text-3xl font-bold text-secondary">Testimonials</h2>
         <div className="flex flex-col items-center">
           <h3 className="text-2xl font-semibold">EXCELLENT</h3>
-          <div className="text-yellow-400 text-2xl">★★★★★</div>
+          <div className="text-yellow-400 text-2xl flex mt-4">
+            {[...Array(5)].map((_, key) => (
+              <FaStar key={key} />
+            ))}
+          </div>
           <p className="mb-1">
             Based on <span className="font-medium">Multiple reviews</span>
           </p>

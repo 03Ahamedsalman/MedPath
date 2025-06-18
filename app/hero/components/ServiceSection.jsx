@@ -16,7 +16,6 @@ const ServiceSection = () => {
       if (!ref) return;
       const icon = ref.querySelector("svg");
 
-      // Set initial state
       gsap.set(icon, {
         transformOrigin: "center",
         scale: 1,
@@ -56,18 +55,15 @@ const ServiceSection = () => {
       ref.addEventListener("mouseenter", handleMouseEnter);
       ref.addEventListener("mouseleave", handleMouseLeave);
 
-      // Cleanup function for each ref
       return () => {
         ref.removeEventListener("mouseenter", handleMouseEnter);
         ref.removeEventListener("mouseleave", handleMouseLeave);
       };
     });
 
-    // Main cleanup function
     return () => {
       currentRefs.forEach((ref) => {
         if (!ref) return;
-        // GSAP animations are automatically killed when elements are removed
       });
     };
   }, []); // Empty dependency array means this runs once on mount

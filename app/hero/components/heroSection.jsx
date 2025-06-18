@@ -111,7 +111,7 @@ const HeroSection = () => {
             >
               {item.span.toUpperCase()}
             </span>
-            <h1 className="text-5xl font-bold text-background" ref={titleRef}>
+            <h1 className="xl:text-5xl md:text-4xl text-3xl font-bold text-background" ref={titleRef}>
               {activeIndex === 0 ? (
                 <>
                   WELCOME TO{" "}
@@ -126,7 +126,7 @@ const HeroSection = () => {
               )}
             </h1>
             <p
-              className="md:text-lg text-base leading-tight text-background"
+              className="2xl:text-lg md:text-base text-sm leading-tight text-background"
               ref={descRef}
             >
               {item.description}
@@ -152,8 +152,8 @@ const HeroSection = () => {
             src={Maskgroup}
             ref={blobRef}
             alt="group image"
-            className="absolute bottom-0 right-0 -z-10"
-          />
+            className="absolute bottom-0 right-0 -z-10  2xl:w-[70rem] xl:w-[60rem] w-[50rem]"
+          /> 
         </div>
         <div className="absolute right-[35%] bottom-10 z-20 flex gap-4 md:gap-2">
           <button

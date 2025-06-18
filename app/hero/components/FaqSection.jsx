@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
-import { Home_Data } from "@/const/Data";
+import { Home_Data, socialmediaLinks } from "@/const/Data";
+import { FaHeadphones } from "react-icons/fa6";
+import { MdOutlineEmail } from "react-icons/md";
 
 const FaqSection = () => {
-  const faqContent = Home_Data.Faqs.entries;
+  const faqContent = Home_Data.Faqs;
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -11,29 +13,48 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="py-24 max">
-      <div className="px-4 sm:px-6 lg:px-8 flex md:flex-row flex-col justify-between">
-        <div className="mb-16">
-          <h6 className="text-lg text-primary font-medium text-center mb-2 w-96">
-            FAQs
+    <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-20 max m-auto w-full">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-start w-full gap-8 md:gap-0">
+        <div className="mb-8 md:mb-0 md:w-1/2 flex flex-col items-center md:items-start">
+          <h6 className="text-base text-primary font-medium text-center md:text-left mb-2 w-full md:w-96">
+            {faqContent.title}
           </h6>
-          <h2 className="text-4xl font-manrope text-center font-bold text-text leading-[3.25rem]">
-            Frequently asked questions
+          <h2 className="text-2xl font-manrope text-center md:text-left font-bold text-text w-full">
+            {faqContent.description}
           </h2>
+          <div className="flex flex-col gap-4 mt-4">
+            <a
+              href={socialmediaLinks.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border w-96 p-4 rounded-full inline-flex items-center justify-between hover:bg-primary transition-all duration-300 ease-in-out"
+            >
+              <FaHeadphones /> +91 73057 02699
+            </a>
+            <a
+              href={socialmediaLinks.email}
+              className="border w-96 p-4 rounded-full inline-flex items-center justify-between hover:bg-primary transition-all duration-300 ease-in-out"
+            >
+              <MdOutlineEmail /> omedpath@gmail.com
+            </a>
+          </div>
         </div>
 
-        <div className="accordion-group" data-accordion="default-accordion">
-          {faqContent.map((faq, index) => (
+        <div
+          className="accordion-group w-full md:w-1/2"
+          data-accordion="default-accordion"
+        >
+          {faqContent.entries.map((faq, index) => (
             <div
               key={index}
-              className={`accordion py-8 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:bg-indigo-50 ${
+              className={`accordion py-8 px-6 border-b border-solid border-border transition-all duration-500 rounded-2xl hover:bg-indigo-50 ${
                 activeIndex === index ? "accordion-active:bg-indigo-50" : ""
               }`}
               id={`faq-heading-${index}`}
             >
               <button
                 onClick={() => toggleAccordion(index)}
-                className={`accordion-toggle group inline-flex items-center justify-between leading-8 text-text w-full transition duration-500 text-left hover:text-primary ${
+                className={`accordion-toggle group inline-flex items-center justify-between leading-8 text-sm text-text w-full transition duration-500 text-left hover:text-primary ${
                   activeIndex === index ? "font-medium text-primary" : ""
                 }`}
                 aria-controls={`faq-collapse-${index}`}
@@ -65,9 +86,7 @@ const FaqSection = () => {
                 }`}
                 aria-labelledby={`faq-heading-${index}`}
               >
-                <p className="text-base text-text leading-6 mt-4">
-                  {faq.answer}
-                </p>
+                <p className="text-sm text-text leading-6 mt-4">{faq.answer}</p>
               </div>
             </div>
           ))}

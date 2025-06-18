@@ -5,19 +5,30 @@ import {
   astanaLogo,
   Banner_1,
   Banner_2,
-  Bashkir,
   bashkirlogo,
-  bukhara,
   BukharaLogo,
   CanthoLogo,
-  iner,
+  DaiNamLogo,
   InternationalLogo,
-  jalala,
-  Kazahk,
+  italyFlag,
+  jalalabadlogo,
+  KazakLogo,
+  kazakstanFlag,
   kazan,
+  KuruskLogo,
+  kyrgyzstanFlag,
   MiniBanner_1,
   MiniBanner_2,
+  OrangeBergLogo,
+  oshLogo,
+  PhanChauLogo,
+  russiaFlag,
+  SamarkandLogo,
+  SiberianLogo,
+  SmolenexLogo,
+  SouthKazakLogo,
   TashkentLogo,
+  uzbekistanFlag,
 } from "@/assets/assets";
 import { ABOUT_ROUTE, CONTACT_ROUTE } from "@/utils/routes";
 
@@ -64,64 +75,238 @@ export const Home_Data = {
   ],
   our_universities: {
     title: "Our University",
-    universities: [
-      {
-        id: 0,
-        title: "Al-Farabi Kazakh National University",
-        image: {
-          src: AL,
-          alt: "Al-Farabi Kazakh National University",
-        },
-      },
+    country_university: [
       {
         id: 1,
-        title: "Bashkir state medical University",
+        title: "Uzbekistan",
         image: {
-          src: Bashkir,
-          alt: "Bashkir state medical University",
+          src: uzbekistanFlag,
+          alt: "Uzbekistan",
         },
+        universities: [
+          {
+            id: 0,
+            title: "BUKHARA STATE MEDICAL INSTITUTE",
+            description: "BUKHARA, Uzbekistan",
+            image: {
+              src: BukharaLogo,
+              alt: "BUKHARA STATE MEDICAL INSTITUTE",
+            },
+          },
+          {
+            id: 1,
+            title: "SAMARKAND STATE MEDICAL INSTITUTE",
+            description:"SAMARKAND, Uzbekistan",
+            image: {
+              src: SamarkandLogo,
+              alt: "SAMARKAND STATE MEDICAL INSTITUTE",
+            },
+          },
+          {
+            id: 2,
+            title: "Tashkent medical University",
+            description: "TASHKENT, Uzbekistan",
+            image: {
+              src: TashkentLogo,
+              alt: "Tashkent medical University",
+            },
+          },
+          {
+            id: 3,
+            title: "ANDIZHAN STATE MEDICAL INSTITUTE",
+            description: "ANDIZHAN, Uzbekistan",
+            image: {
+              src: Andijan,
+              alt: "ANDIZHAN STATE MEDICAL INSTITUTE",
+            },
+          },
+        ],
       },
       {
         id: 2,
-        title: "Bukhara State Medical Institute",
+        title: "Kyrgyzstan",
         image: {
-          src: bukhara,
-          alt: "BUKHARA STATE MEDICAL INSTITUTE",
+          src: kyrgyzstanFlag,
+          alt: "Kyrgyzstan",
         },
+        universities: [
+          {
+            id: 0,
+            title: "Jalalabad state medical University",
+            description: "Jalalabad, Kyrgyzstan",
+            image: {
+              src: jalalabadlogo,
+              alt: "Jalalabad state medical University",
+            },
+          },
+          {
+            id: 1,
+            title: "Osh state medical University",
+            description: "Osh, Kyrgyzstan",
+            image: {
+              src: oshLogo,
+              alt: "BISHKEK INTERNATIONAL UNIVERSITY",
+            },
+          },
+          {
+            id: 2,
+            title: "International School of Medicine",
+            description: "International, Kyrgyzstan",
+            image: {
+              src: InternationalLogo,
+              alt: "International School of Medicine",
+            },
+          },
+        ],
       },
       {
         id: 3,
-        title: "International School of Medicine",
+        title: "Kazakhstan",
         image: {
-          src: iner,
-          alt: "International School of Medicine",
+          src: kazakstanFlag,
+          alt: "Kazakhstan",
         },
+        universities: [
+          {
+            id: 0,
+            title: "Kazakh National Medical University",
+            description: "Almaty, Kazakhstan",
+            image: {
+              src: KazakLogo,
+              alt: "Kazakh National Medical University",
+            },
+          },
+          {
+            id: 1,
+            title: "Astana Medical University",
+            description: "Astana, Kazakhstan",
+            image: {
+              src: astanaLogo,
+              alt: "Astana Medical University",
+            },
+          },
+          {
+            id: 2,
+            title: "Al-Farabi Kazakh National University",
+            description: "Al-Farabi, Kazakhstan",
+            image: {
+              src: AL,
+              alt: "Al-Farabi Kazakh National University",
+            },
+          },
+          {
+            id: 3,
+            title: "SOUTH KAZAKHSTAN MEDICAL ACADEMY",
+            description: "SOUTH KAZAKHSTAN, Kazakhstan",
+            image: {
+              src: SouthKazakLogo,
+              alt: "SOUTH KAZAKHSTAN",
+            },
+          },
+        ],
       },
       {
         id: 4,
-        title: "Kazakh National Medical University",
+        title: "Russia",
         image: {
-          src: Kazahk,
-          alt: "Kazakh National Medical University",
+          src: russiaFlag,
+          alt: "Russia",
         },
+        universities: [
+          {
+            id: 0,
+            title: "Bashkir State Medical University",
+            description: "Bashkir, Russia",
+            image: {
+              src: bashkirlogo,
+              alt: "Bashkir State Medical University",
+            },
+          },
+          {
+            id: 1,
+            title: "Kazan State Medical University",
+            description: "Kazan, Russia",
+            image: {
+              src: kazan,
+              alt: "Kazan State Medical University",
+            },
+          },
+          {
+            id: 2,
+            title: "Kursk state medical University",
+            description: "Kursk, Russia",
+            image: {
+              src: KuruskLogo,
+              alt: "Kursk state medical University",
+            },
+          },
+          {
+            id: 3,
+            title: "Siberian State Medical University",
+            description: "Moscow, Russia",
+            image: {
+              src: SiberianLogo,
+              alt: "Siberian State Medical University",
+            },
+          },
+          {
+            id: 4,
+            title: "SMOLENSK STATE MEDICAL UNIVERSITY",
+            description: "Moscow, Russia",
+            image: {
+              src: SmolenexLogo,
+              alt: "SMOLENSK STATE MEDICAL UNIVERSITY",
+            },
+          },
+          {
+            id: 5,
+            title: "ORENBURG STATE MEDICAL UNIVERSITY",
+            description: "Yekaterinburg, Russia",
+            image: {
+              src: OrangeBergLogo,
+              alt: "ORENBURG STATE MEDICAL UNIVERSITY",
+            },
+          },
+        ],
       },
       {
         id: 5,
-        title: "Jalalabad state medical University",
+        title: "Italy",
         image: {
-          src: jalala,
-          alt: "Jalalabad state medical University",
+          src: italyFlag,
+          alt: "Italy",
         },
+        universities: [
+          {
+            id: 0,
+            title: "Can Tho University of Medicine and Pharmacy",
+            description: "Can Tho, Vietnam",
+            image: {
+              src: CanthoLogo,
+              alt: "Can Tho University of Medicine and Pharmacy",
+            },
+          },
+          {
+            id: 1,
+            title: "Phan Chau Trinh University",
+            description: "Orenburg, Russia",
+            image: {
+              src: PhanChauLogo,
+              alt: "Phan Chau Trinh University",
+            },
+          },
+          {
+            id: 2,
+            title: "Dai Nam University",
+            description: "Dai, Vietnam",
+            image: {
+              src: DaiNamLogo,
+              alt: "Dai Nam University",
+            },
+          },
+        ],
       },
-      {
-        id: 6,
-        title: "Kazan state medical University",
-        image: {
-          src: kazan,
-          alt: "Kazan state medical University",
-        },
-      },
-    ],
+    ], 
   },
   about_section: {
     span: "About Us",

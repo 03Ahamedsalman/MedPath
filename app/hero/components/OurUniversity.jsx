@@ -1,36 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Home_Data } from "@/const/Data";
 import UniversityCard from "../ui/UniversityCard";
-import { Navigation, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
 import UniversitSumbitForm from "@/components/forms/UniversitSumbitForm";
+import Image from "next/image";
+
 
 const OurUniversity = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [images, setImages] = useState([]);
   const [showForm, setShowForm] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 300);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <section className="px-4 xs:px-6 sm:px-8 py-8 sm:py-12 md:py-16 min-h-[500px] flex items-center justify-center">
-        <div className="animate-pulse">Loading universities...</div>
-      </section>
-    );
-  }
+  const [activeTab, setActiveTab] = useState(1);
 
   const title = Home_Data.our_universities.title;
-  const university_slide = Home_Data.our_universities.universities;
+  const university_slide = Home_Data.our_universities.country_university;
 
   const handleApplyClick = (universityName) => {
     setSelectedUniversity(universityName);
@@ -49,52 +32,57 @@ const OurUniversity = () => {
           {title}
         </h2>
         <div className="relative">
-          <Swiper
-            modules={[Navigation, Autoplay]} // Added Autoplay here
-            spaceBetween={16}
-            navigation={{
-              nextEl: ".custom-next",
-              prevEl: ".custom-prev",
-            }}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true, // Optional: pause on hover
-            }}
-            loop={true}
-            breakpoints={{
-              480: { slidesPerView: 1.2, spaceBetween: 16 },
-              640: { slidesPerView: 2, spaceBetween: 20 },
-              768: { slidesPerView: 2.3, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 24 },
-              1280: { slidesPerView: 3, spaceBetween: 30 },
-            }}
-            className="px-2 sm:px-0"
+          <nav
+            className="relative z-0 flex border border-background rounded-xl overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+            aria-label="Tabs"
+            role="tablist"
+            aria-orientation="horizontal"
           >
-            {university_slide.map((university, index) => (
-              <SwiperSlide key={index} className="pb-2">
-                <UniversityCard
+            {university_slide.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                className={`hs-tab-active:border-b-primary hs-tab-active:text-primary relative md:w-full min-w-[120px] first:border-s-0 border-s border-b-2 border-border py-4 px-4 text-text hover:text-gray-700 text-sm font-medium text-center hover:bg-border/50 focus:z-10 focus:outline-hidden focus:text-secodnary disabled:opacity-50 disabled:pointer-events-none flex md:flex-row flex-col items-center justify-center gap-2 ${
+                  activeTab === tab.id ? "border-b-primary text-text bg-primary/10" : ""
+                }`}
+                id={`bar-with-underline-item-${tab.id}`}
+                aria-selected={activeTab === tab.id}
+                aria-controls={`bar-with-underline-${tab.id}`}
+                role="tab"
+                onClick={() => setActiveTab(tab.id)}
+              >
+                <Image
+                  src={tab.image.src}
+                  alt={tab.image.alt || tab.title}
+                  className="w-6 h-6 inline-block mr-2"/>
+                <span className="text-xs">{tab.title}</span>
+              </button>
+            ))}
+          </nav>
+          <div className="mt-3">
+            {university_slide.map((tab) => (
+              <div
+                key={tab.id}
+                id={`bar-with-underline-${tab.id}`}
+                role="tabpanel"
+                aria-labelledby={`bar-with-underline-item-${tab.id}`}
+                className={activeTab === tab.id ? "block" : "hidden"}
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+
+                {tab.universities.map((university) => (
+                  <UniversityCard
+                  key={university.id}
                   title={university.title}
                   image={university.image}
-                  onApplyClick={handleApplyClick}
-                />
-              </SwiperSlide>
+                  description={university.description}
+                  onApplyClick={() => handleApplyClick(university)}
+                  />
+                ))}
+                </div>
+              </div>
             ))}
-          </Swiper>
-
-          {/* Custom Navigation Arrows */}
-          <button
-            className="custom-prev hidden sm:flex absolute -left-3 md:-left-8 lg:-left-10 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100 active:scale-95 transition-all duration-200"
-            aria-label="Previous slide"
-          >
-            <FaArrowLeft className="text-gray-600 text-sm md:text-base" />
-          </button>
-          <button
-            className="custom-next hidden sm:flex absolute -right-3 md:-right-8 lg:-right-10 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100 active:scale-95 transition-all duration-200"
-            aria-label="Next slide"
-          >
-            <FaArrowRight className="text-gray-600 text-sm md:text-base" />
-          </button>
+          </div>
         </div>
         {showForm && (
           <UniversitSumbitForm

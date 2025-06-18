@@ -87,13 +87,13 @@ export default function UniversitySubmitForm({ university, onClose }) {
               alt={university?.image?.src}
               width={100}
               height={100}
-              className="w-full object-cover rounded-2xl hidden md:block"
+              className="w-[400px] object-cover rounded-2xl hidden md:block"
             />
           </div>
         </div>
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 md:w-[50%] w-full max-h-[30rem] overflow-y-scroll scroll-hidden md:px-4"
+          className="space-y-4 md:w-[50%] w-full overflow-y-scroll scroll-hidden md:px-4"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>

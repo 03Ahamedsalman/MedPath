@@ -21,6 +21,13 @@ import areyouready from "./areyouready.webp";
 import mbbsAbroadStudents from "./mbbsAbroadStudents.webp";
 import quote from "./quote.svg";
 
+// Country Image
+import italyFlag from "./country_logo/italyFlag.png";
+import kazakstanFlag from "./country_logo/kazakstanFlag.png";
+import kyrgyzstanFlag from "./country_logo/kyrgyzstanFlag.png";
+import russiaFlag from "./country_logo/russiaFlag.png";
+import uzbekistanFlag from "./country_logo/uzbekistanFlag.png";
+
 // Universite Image
 import AL from "./universities/Al-Farabi Kazakh National University.webp";
 import Bashkir from "./universities/Bashkir state medical University.webp";
@@ -44,6 +51,19 @@ import BukharaLogo from "./university_log/BUKHARA.jpg";
 import CanthoLogo from "./university_log/Can Tho University.png";
 import InternationalLogo from "./university_log/International School of Medicine.png";
 import TashkentLogo from "./university_log/Tashkent.png";
+import DaiNamLogo from "./university_log/Dai-Nam.webp";
+import jalalabadlogo from "./university_log/jalabad.jpeg";
+import KazakLogo from "./university_log/kazak.gif";
+import KazanLogo from "./university_log/kazan.png";
+import KuruskLogo from "./university_log/Kursk_State_Medical_University_logo.png";
+import OrangeBergLogo from "./university_log/orangeberg.png";
+import oshLogo from "./university_log/osh.png";
+import PhanChauLogo from "./university_log/Phan-Chau.webp";
+import SamarkandLogo from "./university_log/samarkand.png";
+import SiberianLogo from "./university_log/siberian.png";
+import SmolenexLogo from "./university_log/smolenex.jpg";
+import SouthKazakLogo from "./university_log/SOUTH-KAZAKH.png";
+
 
 // about section
 import about_1 from "./aboutus/about_1.webp";
@@ -97,6 +117,25 @@ export {
   CanthoLogo,
   InternationalLogo,
   TashkentLogo,
+  DaiNamLogo,
+  jalalabadlogo,
+  KazakLogo,
+  KazanLogo,
+  KuruskLogo,
+  OrangeBergLogo,
+  oshLogo,
+  PhanChauLogo,
+  SamarkandLogo,
+  SiberianLogo,
+  SmolenexLogo,
+  SouthKazakLogo,
+
+  // Country Image
+  italyFlag,
+  kazakstanFlag,
+  kyrgyzstanFlag,
+  russiaFlag,
+  uzbekistanFlag,
 
   // about section
   about_1,

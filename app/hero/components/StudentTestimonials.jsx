@@ -49,7 +49,7 @@ const StudentTestimonials = () => {
         <div className="relative">
           {/* Navigation buttons */}
           <div className="group md:block hidden">
-            <button className="custom-prev absolute -right-14 top-[30%] z-10 -translate-y-1/2 rounded-full p-2 group-hover:bg-primary cursor-pointer transition-all group-hover:scale-105 duration-300">
+            <button className="custom-prev absolute 2xl:-right-14 right-0 top-[30%] z-10 -translate-y-1/2 rounded-full p-2 group-hover:bg-primary cursor-pointer transition-all group-hover:scale-105 duration-300">
               <FaChevronUp className="h-5 w-5 group-hover:text-background" />
             </button>
           </div>
@@ -77,7 +77,7 @@ const StudentTestimonials = () => {
             ))}
           </Swiper>
           <div className="group md:block hidden">
-            <button className="custom-next absolute -right-14 top-[45%] z-10 -translate-y-1/2 rounded-full  p-2 group-hover:bg-primary cursor-pointer transition-all group-hover:scale-105 duration-300">
+            <button className="custom-next absolute 2xl:-right-14 right-0 top-[45%] z-10 -translate-y-1/2 rounded-full  p-2 group-hover:bg-primary cursor-pointer transition-all group-hover:scale-105 duration-300">
               <FaChevronDown className="h-5 w-5 group-hover:text-background" />
             </button>
           </div>

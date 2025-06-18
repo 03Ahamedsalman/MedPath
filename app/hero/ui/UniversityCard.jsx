@@ -2,24 +2,25 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
-export default function UniversityCard({ title, image, onApplyClick }) {
+export default function UniversityCard({ title, image, onApplyClick, description }) {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="rounded-xl overflow-hidden ">
+    <div className="overflow-hidden flex gap-4 border-transparent border-b-2 hover:border-primary py-4 transition-all duration-300 ease-in-out mr-2">
       <div className="overflow-hidden">
         <Image
           src={image.src}
           alt={title}
-          className="transition-transform duration-500 ease-in-out hover:scale-110"
+          className="transition-transform duration-500 ease-in-out hover:scale-110 w-10 rounded-full"
         />
       </div>
-      <div className="p-6 bg-primary/5 flex flex-col gap-4 min-h-36 justify-between">
-        <h3 className="text-2xl font-semibold">{title}</h3>
+      <div className="">
+        <h3 className="text-primary text-sm">{title}</h3>
+        <p className="text-[10px]">{description}</p>
         <button
           onClick={() => onApplyClick({ title, image: image.src })}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="text-secondary flex items-center text-sm gap-2 w-fit cursor-pointer"
+          className="text-secondary flex items-center text-sm gap-2 w-fit cursor-pointer mt-2"
         >
           Apply Now
           <span

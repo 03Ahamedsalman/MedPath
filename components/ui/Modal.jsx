@@ -29,11 +29,11 @@ export function Modal({
 
   return (
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center overflow-y-auto overflow-x-hidden z-[9999] max-md:p-2"
+      className="fixed inset-0 bg-black/50 flex items-center justify-center overflow-y-auto overflow-x-hidden z-[9999] p-4"
       onClick={closeOnOutsideClick ? onClose : undefined}
     >
       <div
-        className="relative rounded-2xl overflow-auto bg-cover bg-center bg-no-repeat min-h-[50vh] min-w-[50vw]"
+        className="relative rounded-2xl overflow-auto bg-cover bg-center bg-no-repeat min-w-[50vw] h-full"
         style={{
           backgroundImage: `url(${backgroundImage2.src || backgroundImage2})`,
           backdropFilter: "blur(2px)", // Optional: adds blur effect to background

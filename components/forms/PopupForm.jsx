@@ -142,15 +142,13 @@ const PopupForm = () => {
     >
       <div
         ref={popupRef}
-        className="bg-background rounded-xl md:min-w-3xl flex overflow-y-auto shadow-lg max-w-4xl w-full items-center"
+        className="bg-background rounded-xl md:min-w-3xl flex overflow-y-auto shadow-lg max-w-4xl w-full items-center h-full"
       >
         <div className="w-[50%] hidden md:block">
           <Image
             src={popupImg}
             alt="popupImg"
-            width={200}
-            height={200}
-            className="w-full h-full object-cover"
+            className="2xl:w-full 2xl:h-full object-cover"
           />
         </div>
         <form

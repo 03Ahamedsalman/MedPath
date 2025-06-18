@@ -430,6 +430,75 @@ export const Home_Data = {
       },
     ],
   },
+
+  Faqs: {
+    title: "Frequently Asked Questions",
+    description:
+      "This is where you'll find answers to some of the most common questions.",
+    entries: [
+      {
+        id: 1,
+        question: "What is MBBS Consultancy?",
+        answer:
+          "We work with top universities in various countries known for their medical programs, including Russia, Ukraine, China, Germany, Kazakhstan, the Philippines, Bangladesh, India, and Georgia. We ensure that the universities we recommend meet high standards of education and accreditation.",
+      },
+      {
+        id: 2,
+        question: "How can I apply for MBBS through your Consultants?",
+        answer:
+          "MBBS Consultancy helps Indian students pursue their dream of studying MBBS in top international universities. We provide comprehensive guidance and support throughout the entire process, from choosing the right university to ensuring a smooth transition to life abroad.",
+      },
+      {
+        id: 3,
+        question: "Which countries do you work with for MBBS studies?",
+        answer:
+          "We work with top universities in various countries known for their medical programs, including Russia, Ukraine, China, Germany, Kazakhstan, the Philippines, Bangladesh, India, and Georgia. We ensure that the universities we recommend meet high standards of education and accreditation.",
+      },
+      {
+        id: 4,
+        question: "Is the MBBS degree from abroad valid in India?",
+        answer:
+          "Yes, the MBBS degrees from recognized universities abroad are valid in India. However, students must clear the Foreign Medical Graduate Examination (FMGE) conducted by the National Board of Examinations (NBE) in India to practice medicine in India. We will guide you on the process and preparation for the FMGE.",
+      },
+      {
+        id: 5,
+        question: "How safe is it for Indian students to study abroad?",
+        answer:
+          "The countries we work with—like Georgia, Russia, Kazakhstan, Uzbekistan, and the USA—are generally safe and student-friendly. We ensure that our partner universities offer secure and comfortable environments.",
+      },
+      {
+        id: 6,
+        question: "Which country is the most affordable for MBBS abroad?",
+        answer:
+          "Countries like Kazakhstan, Uzbekistan, and Russia are among the most budget-friendly options, offering quality education with lower tuition and living expenses.",
+      },
+      {
+        id: 7,
+        question: "Can I get a scholarship to study MBBS abroad?",
+        answer:
+          "Yes, many universities offer partial scholarships based on academic performance or through early admissions. Our team helps identify such opportunities for eligible students.",
+      },
+      {
+        id: 8,
+        question: "Do I need to learn the local language to study MBBS abroad?",
+        answer:
+          "While the medium of instruction is English, some universities may encourage students to learn the local language to better communicate during clinical practice. Basic language classes are often provided as part of the program.",
+      },
+      {
+        id: 9,
+        question: "How soon should I apply for MBBS abroad programs?",
+        answer:
+          "We recommend applying 6–8 months in advance of the intake, as this allows ample time for documentation, visa processing, and other formalities.",
+      },
+      {
+        id: 10,
+        question:
+          "Can I transfer from one university or country to another during MBBS?",
+        answer:
+          "In some cases, university transfers are allowed, depending on university policies and credit equivalency. Our team can assist with this process.",
+      },
+    ],
+  },
   countryItems: [
     { id: 1, label: "MBBS in Russia", href: "/countries/russia" },
     { id: 2, label: "MBBS in Kyrgyzstan", href: "/countries/kyrgyzstan" },

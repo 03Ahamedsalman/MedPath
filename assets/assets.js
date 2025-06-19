@@ -71,6 +71,15 @@ import about_2 from "./aboutus/about_2.webp";
 import about_3 from "./aboutus/about_3.webp";
 import about_4 from "./aboutus/about_4.webp";
 
+
+
+
+//footer images
+import Footerbg from "./Footer/footer-bg1.webp";
+import Footershape1 from "./Footer/footershape1.webp";
+import  Footershape2 from "./Footer/footershape2.webp";
+
+
 export {
   Banner_1,
   MiniBanner_1,
@@ -142,4 +151,11 @@ export {
   about_2,
   about_3,
   about_4,
+
+
+
+    //footer
+  Footerbg,
+  Footershape1,
+  Footershape2,
 };
